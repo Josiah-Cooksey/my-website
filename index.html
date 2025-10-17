@@ -1,20 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
     <head>
         <title>Josiah Cooksey - Full Stack Software Developer</title>
         <link rel="canonical" href="https://jcooksey.dev/">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Portfolio website of Josiah Cooksey, showcasing software projects, experience, and possibly blog posts.">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+        </script>
     </head>
-    <body>
+    <body class="bg-slate-400 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
         <header>
             <b><h1>Page Under Construction</h1></b>
             <h3>since October 15, 2025</h3>
             <section>
-                <h4>My other projects: <a href="https://github.com/Josiah-Cooksey/">Github</a></h4>
-                <h4>My experience: <a href="https://www.linkedin.com/in/josiah-cooksey/">LinkedIn</a></h4>
+                <h4>My other projects: <a href="https://github.com/Josiah-Cooksey/" class="text-blue-600 dark:text-blue-400 hover:underline">Github</a></h4>
+                <h4>My experience: <a href="https://www.linkedin.com/in/josiah-cooksey/" class="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a></h4>
             </section>
         </header>
+        <div class="max-w-sm rounded-2xl shadow-md overflow-hidden m-4 w-128">
+            <img class="object-cover rounded-full bg-white" src="./media/landing-page/dithered.png" alt="headshot of Josiah Cooksey with a dithered filter applied"><!--may want to add style="image-rendering: pixelated;" but I think that it looks fine with the default interpolation-->
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Josiah Cooksey</h3>
+                <p class="text-gray-600 text-sm">Illinois, United States of America</p>
+                <div class="inline-grid grid-cols-3 gap-2 max-w-xl">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                    <img class="object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language">
+                </div>
+                <div class="flex flex-col items-left">
+                </div>
+            </div>
+        </div>
     </body>
 </html>
