@@ -17,7 +17,22 @@
     <body class="bg-slate-400 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
         <header>
             <b><h1>Page Under Construction</h1></b>
-            <h3>since October 15, 2025</h3>
+            <h3 id="last-update-date">Loading last update timestamp...</h3>
+            <script>
+                // shows last update timestamp because I want visitors to know that the page is being developed and isn't stale
+                fetch("https://api.github.com/repos/Josiah-Cooksey/my-website")
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Last push:", data.pushed_at);
+                        listedTime = new Date(data.pushed_at)
+                        
+                        document.getElementById("last-update-date").textContent = "Last updated: " + listedTime.toLocaleString()
+                    })
+                    .catch(error => {
+                        console.error("Error:", error)
+                        document.getElementById("last-update-date").textContent = "Could not obtain last update timestamp."
+                    });
+            </script>
             <section>
                 <h4>My other projects: <a href="https://github.com/Josiah-Cooksey/" class="text-blue-600 dark:text-blue-400 hover:underline">Github</a></h4>
                 <h4>My experience: <a href="https://www.linkedin.com/in/josiah-cooksey/" class="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a></h4>
