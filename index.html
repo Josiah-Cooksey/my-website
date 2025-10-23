@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en" class="light" id="html">
     <head>
         <title>Josiah Cooksey - Full Stack Software Developer</title>
         <link rel="canonical" href="https://jcooksey.dev/">
@@ -37,6 +37,19 @@
                 <h4>My other projects: <a href="https://github.com/Josiah-Cooksey/" class="text-blue-600 dark:text-blue-400 hover:underline">Github</a></h4>
                 <h4>My experience: <a href="https://www.linkedin.com/in/josiah-cooksey/" class="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a></h4>
             </section>
+            <button class="bg-blue-500 m-2 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full" onclick="
+                theHTMLElement = document.getElementById('html')
+                if (theHTMLElement.className != 'dark')
+                {
+                    theHTMLElement.className='dark'
+                }
+                else
+                {
+                    theHTMLElement.className='light'
+                }
+            ">
+                Toggle Dark Mode
+            </button>
         </header>
         <div class="flex flex-col md:flex-row gap-4">
             <!-- Left panel -->
@@ -79,7 +92,7 @@
             <section>
                 <div class="rounded-2xl shadow-xl m-4 w-256 flex flex-wrap">
                     <div class="p-2 m-2">
-                        <h3 class="text-lg font-bold">Project Name Placeholder</h3>
+                        <h3 class="text-lg font-bold">Multi-colour Ditherer</h3>
                     </div>
                     <div class="p-2 m-2 inline-grid grid-cols-5 gap-2 max-w-xl">
                         <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/language-icons/java.svg" alt="Java programming language icon">
