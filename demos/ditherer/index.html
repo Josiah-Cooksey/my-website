@@ -14,32 +14,8 @@
         }
         </script>
     </head>
-    <body class="p-2 bg-gray-400 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <body class="p-2 bg-gray-400 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen">
         <header>
-            <!--div class="absolute top-10 left-10 z-[9999] bg-yellow-500 p-4">
-                On top of everything!
-            </div-->
-            <b><h1>Page Under Construction</h1></b>
-            <h3 id="last-update-date">Loading last update timestamp...</h3>
-            <script>
-                // shows last update timestamp because I want visitors to know that the page is being developed and isn't stale
-                fetch("https://api.github.com/repos/Josiah-Cooksey/my-website")
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log("Last push:", data.pushed_at);
-                        listedTime = new Date(data.pushed_at)
-                        
-                        document.getElementById("last-update-date").textContent = "Last updated: " + listedTime.toLocaleString()
-                    })
-                    .catch(error => {
-                        console.error("Error:", error)
-                        document.getElementById("last-update-date").textContent = "Could not obtain last update timestamp."
-                    });
-            </script>
-            <section>
-                <h4>My other projects: <a href="https://github.com/Josiah-Cooksey/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Github</a></h4>
-                <h4>My experience: <a href="https://www.linkedin.com/in/josiah-cooksey/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a></h4>
-            </section>
             <button class="bg-blue-500 m-2 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full" onclick="
                 theHTMLElement = document.getElementById('html')
                 if (theHTMLElement.className != 'dark')
@@ -54,80 +30,8 @@
                 Toggle Dark Mode
             </button>
         </header>
-        <!--div class="flex flex-col md:flex-row gap-4">
-            <div class="flex-1 bg-zinc-500 p-4 rounded">Home</div>
-            <div class="flex-1 bg-zinc-500 p-4 rounded">Projects</div>
-            <div class="flex-1 bg-zinc-500 p-4 rounded">Contact</div>
-        </div-->
         <div class="flex flex-col md:flex-row">
-            <section>
-                <div class="m-4 w-96 rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 mx-auto bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                    <img class="object-cover w-[221px] h-[221px] rounded-full bg-white m-3" src="./media/landing-page/dithered.png" alt="headshot of Josiah Cooksey with a dithered filter applied"><!--may want to add style="image-rendering: pixelated;" but I think that it looks fine with the default interpolation-->
-                    <div class="py-3 flex flex-col max-w-xl">
-                        <div class="m-1 flex items-center gap-2">
-                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
-                            <p class="text-md font-semibold">Java</p>
-                        </div>
-                        <div class="m-1 flex items-center gap-2">
-                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/python.svg" alt="Python programming language icon">
-                            <p class="text-md font-semibold">Python</p>
-                        </div>
-                        <div class="m-1 flex items-center gap-2">
-                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/spring-boot.svg" alt="Spring Boot programming framework icon">
-                            <p class="text-md font-semibold">Spring Boot</p>
-                        </div>
-                        <div class="m-1 flex items-center gap-2">
-                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Python programming language icon">
-                            <p class="text-md font-semibold">AWS</p>
-                        </div>
-                        <div class="m-1 flex items-center gap-2">
-                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/mysql.svg" alt="Python programming language icon">
-                            <p class="text-md font-semibold">MySQL</p>
-                        </div>
-                        <div class="m-1 flex items-center gap-2">
-                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/hibernate.svg" alt="Python programming language icon">
-                            <p class="text-md font-semibold">Hibernate</p>
-                        </div>
-                    </div>
-                    <div class="p-2 m-2">
-                        <h3 class="text-xl font-bold">Josiah Cooksey</h3>
-                        <p class="text-gray-500 text-sm mb-2">Illinois, United States of America</p>
-                        <p class="text-gray-500 text-sm">Full-stack developer who enjoys the algorithmic, puzzle-solving side of programming.</p>
-                        <br>
-                        <p class="text-sm">B.Sc. in Computer Science (WGU, completed in 5 months) · Python automation experience · Full-stack development with Spring Boot & Angular</p>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="rounded-2xl shadow-xl m-4 w-256 flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                    <div class="p-2 m-2">
-                        <h3 class="text-lg font-bold">Multi-colour Ditherer</h3>
-                    </div>
-                    <div class="p-2 m-2 inline-grid grid-cols-5 gap-2 max-w-xl">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/python.svg" alt="Python programming language icon">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                        <img class="object-contain object-cover object-top bg-slate-300 shadow-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language">
-                    </div>
-                    
-                    <div class="p-2 m-2">
-                        <h3 class="text-xl font-bold">Dithers images using preset or user-provided kernels</h3>
-                        <p class="text-gray-500 text-sm mb-2">tiny info</p>
-                        <p class="text-gray-500 text-sm">more info</p>
-                        <br>
-                        <p class="text-sm">project description and many words more Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima provident recusandae reiciendis? Dicta vel natus dolorum ab, voluptate facilis doloremque doloribus iste laborum velit nobis amet suscipit saepe ex similique?</p>
-                    </div>
-                </div>
-            </section>
+            <h2>This is where the demo front-end would be displayed with a clear usage example and some preset options so people don't <i>need</i> to upload anything</h2>
         </div>
     </body>
 </html>
