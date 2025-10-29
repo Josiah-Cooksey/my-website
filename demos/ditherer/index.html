@@ -36,8 +36,12 @@
             <h2>Upload a File</h2>
             <br>
             <form action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data">
-                <label for="file">Choose a file:</label>
-                <input accept=".png" type="file" id="file" name="imageToBeDithered">
+                <label for="inputImage">Input image:</label>
+                <input accept=".png" type="file" id="inputImage" name="inputImage">
+                <label for="kernel">Dithering kernel:</label>
+                <input accept=".png" type="file" id="kernel" name="kernel">
+                <label for="palette">Dither palette:</label>
+                <input accept=".png" type="file" id="palette" name="palette">
 
                 <br><br>
                 <button type="submit">Upload</button>
