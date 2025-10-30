@@ -30,22 +30,25 @@
                 Toggle Dark Mode
             </button>
         </header>
-        <div class="flex flex-col md:flex-row">
-            <h2>This is where the demo front-end would be displayed with a clear usage example and some preset options so people don't <i>need</i> to upload anything</h2>
-            
-            <h2>Upload a File</h2>
-            <br>
-            <form action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data">
-                <label for="inputImage">Input image:</label>
-                <input accept=".png" type="file" id="inputImage" name="inputImage">
-                <label for="kernel">Dithering kernel:</label>
-                <input accept=".png" type="file" id="kernel" name="kernel">
-                <label for="palette">Dither palette:</label>
-                <input accept=".png" type="file" id="palette" name="palette">
+        <section>
+            <div class="m-4 w-96 rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 mx-auto bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                <div class="p-2 m-2">
+                    <h2>This is where the demo front-end would be displayed with a clear usage example and some preset options so people don't <i>need</i> to upload anything</h2>
+                </div>
+                <div class="p-2 m-2">
+                    <form action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data">
+                        <label for="inputImage" class="text-md">Input image:</label>
+                        <input accept=".png" type="file" id="inputImage" name="inputImage"><br>
+                        <label for="kernel">Dithering kernel:</label>
+                        <input accept=".png" type="file" id="kernel" name="kernel"><br>
+                        <label for="palette">Palette:</label>
+                        <input accept=".png" type="file" id="palette" name="palette"><br>
 
-                <br><br>
-                <button type="submit">Upload</button>
-            </form>
-        </div>
+                        <br>
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
