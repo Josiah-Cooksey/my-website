@@ -1,5 +1,5 @@
 const form = document.getElementById("ditherUploadForm");
-form = async (event) => 
+form.onsubmit = async (event) => 
 {
     event.preventDefault();
 
