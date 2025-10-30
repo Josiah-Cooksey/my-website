@@ -37,15 +37,13 @@
                 </div>
                 <div class="p-2 m-2">
                     <form action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data">
-                        <label for="inputImage" class="text-md">Input image:</label>
-                        <input accept=".png" type="file" id="inputImage" name="inputImage"><br>
-                        <label for="kernel">Dithering kernel:</label>
-                        <input accept=".png" type="file" id="kernel" name="kernel"><br>
-                        <label for="palette">Palette:</label>
-                        <input accept=".png" type="file" id="palette" name="palette"><br>
-
-                        <br>
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload</button>
+                        <label for="inputImage" class="text-md">Input image:</label><br>
+                        <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2"><br>
+                        <label for="kernel" class="text-md">Dithering kernel:</label><br>
+                        <input accept=".png" type="file" id="kernel" name="kernel" class="m-2"><br>
+                        <label for="palette" class="text-md">Palette:</label><br>
+                        <input accept=".png" type="file" id="palette" name="palette" class="m-2">
+                        <button type="submit" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload</button>
                     </form>
                 </div>
             </div>
