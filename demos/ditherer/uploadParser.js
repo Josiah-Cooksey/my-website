@@ -24,16 +24,17 @@ form.onsubmit = async (event) =>
             body: formData
         });
 
-        const result = await response.json();
+        const jsonResult = await response.json();
+        console.log(`jsonResult: ${jsonResult}`);
         
-        if ("error" in response)
+        if ("error" in jsonResult)
         {
             const errorField = document.getElementById("errorDisplay");
-            errorField.textContent = response["error"];
+            errorField.textContent = jsonResult["error"];
             return;
         }
-        const imageElement = document.getElementById("resultImage");
-        imageElement.src = `data:image/png;base64,${response["resultImage"]}`;
+        const imageElement = document.getElementById("resultImageHolder");
+        imageElement.src = `data:image/png;base64,${jsonResult["resultImage"]}`;
     }
     catch (error)
     {
