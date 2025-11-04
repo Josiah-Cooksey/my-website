@@ -41,64 +41,44 @@
                     <h2>This is where the demo front-end would be displayed with a clear usage example and some preset options so people don't <i>need</i> to upload anything</h2>
                 </div>
                 <div class="p-2 m-2">
-                    <!--div class="relative w-full max-w-lg mx-auto overflow-hidden rounded-2xl">
-                        <div class="flex transition-transform duration-500" style="scroll-snap-type: x mandatory; overflow-x: auto;">
-                            <a href="#slide1" id="slide1"><img src="https://placecats.com/300/200" class="w-full flex-shrink-0" alt="Slide 1"></a>
-                            <a href="#slide2" id="slide2"><img src="https://placecats.com/301/200" class="w-full flex-shrink-0" alt="Slide 2"></a>
-                            <a href="#slide3" id="slide3"><img src="https://placecats.com/302/200" class="w-full flex-shrink-0" alt="Slide 3"></a>
+                    <div class="relative w-full max-w-lg mx-auto select-none">
+                        <!-- Carousel -->
+                        <div id="carousel" data-selected-image-index="0" class="w-full overflow-x-auto flex snap-x snap-mandatory rounded-2xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                            
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/neo_2/300/200" class="w-full rounded-xl" alt="Slide 4" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/bella/300/200" class="w-full rounded-xl" alt="Slide 5" draggable="false">
+                            </div>
+                            
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/millie/300/150" class="w-full rounded-xl" alt="Slide 1" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/millie_neo/300/200" class="w-full rounded-xl" alt="Slide 2" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/neo_banana/300/200" class="w-full rounded-xl" alt="Slide 3" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/neo_2/300/200" class="w-full rounded-xl" alt="Slide 4" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/bella/300/200" class="w-full rounded-xl" alt="Slide 5" draggable="false">
+                            </div>
+                            
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/millie/300/150" class="w-full rounded-xl" alt="Slide 1" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="https://placecats.com/millie_neo/300/200" class="w-full rounded-xl" alt="Slide 2" draggable="false">
+                            </div>
                         </div>
 
-                        <div class="flex justify-center gap-2 mt-2">
-                            <a href="#slide1" class="w-3 h-3 bg-gray-400 rounded-full"></a>
-                            <a href="#slide2" class="w-3 h-3 bg-gray-400 rounded-full"></a>
-                            <a href="#slide3" class="w-3 h-3 bg-gray-400 rounded-full"></a>
-                        </div>
-                    </div-->
-                    <!--div class="w-full max-w-lg mx-auto overflow-x-auto flex snap-x snap-mandatory scroll-smooth rounded-2xl">
-                        <img src="https://placecats.com/302/200" class="w-full flex-shrink-0 snap-center" alt="Slide 1">
-                        <img src="https://placecats.com/303/200" class="w-full flex-shrink-0 snap-center" alt="Slide 2">
-                        <img src="https://placecats.com/304/200" class="w-full flex-shrink-0 snap-center" alt="Slide 3">
-                    </div-->
-                <div class="relative w-full max-w-lg mx-auto select-none">
-                    <!-- Carousel -->
-                    <div id="carousel" class="w-full overflow-x-auto flex snap-x snap-mandatory rounded-2xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                        
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/neo_2/300/200" class="w-full rounded-xl" alt="Slide 4" draggable="false">
-                        </div>
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/bella/300/200" class="w-full rounded-xl" alt="Slide 5" draggable="false">
-                        </div>
-                        
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/millie/300/150" class="w-full rounded-xl" alt="Slide 1" draggable="false">
-                        </div>
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/millie_neo/300/200" class="w-full rounded-xl" alt="Slide 2" draggable="false">
-                        </div>
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/neo_banana/300/200" class="w-full rounded-xl" alt="Slide 3" draggable="false">
-                        </div>
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/neo_2/300/200" class="w-full rounded-xl" alt="Slide 4" draggable="false">
-                        </div>
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/bella/300/200" class="w-full rounded-xl" alt="Slide 5" draggable="false">
-                        </div>
-                        
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/millie/300/150" class="w-full rounded-xl" alt="Slide 1" draggable="false">
-                        </div>
-                        <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                            <img src="https://placecats.com/millie_neo/300/200" class="w-full rounded-xl" alt="Slide 2" draggable="false">
-                        </div>
+                        <button id="prevBtn" data-group="carousel-1-previous-button" class="font-bold absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">&lt;</button>
+                        <button id="nextBtn" data-group="carousel-1-next-button" class="font-bold absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">&gt;</button>
                     </div>
-
-                    <!-- Controls -->
-                    <button id="prevBtn" class="font-bold absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">&lt;</button>
-                    <button id="nextBtn" class="font-bold absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">&gt;</button>
-                
-                </div>
                 </div>
                 <div class="p-2 m-2">
                     <form id="ditherUploadForm" action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data">
