@@ -5,7 +5,11 @@ form.onsubmit = async (event) =>
 
     const formData = new FormData(form);
 
-    const inputImageResponse = await fetch("media/sample-images/small-happy-frog.png");
+    const carousel = document.getElementById("carousel");
+    const slides = carousel.querySelectorAll("img");
+    const inputImageURL = slides[parseInt(carousel.dataset.selectedImageIndex) + 2].src;
+    
+    const inputImageResponse = await fetch(inputImageURL);
     const inputImageBlob = await inputImageResponse.blob();
     formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");
 
