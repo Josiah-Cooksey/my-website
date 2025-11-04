@@ -9,9 +9,12 @@ const slideWidth = slides[0].scrollWidth;
 // that way, we can simulate an infinite/looping carousel
 const realSlideCount = slides.length - 4;
 
-carousel.scrollTo({ left: slideWidth * 2, behavior: "smooth" });
+carousel.scrollTo({ left: slideWidth * 2, behavior: "auto" });
+
+
 function updateCarousel()
 {
+    carousel.dataset.selectedImageIndex = selectionIndex;
     console.log(`selectionIndex: ${selectionIndex}; priorSelectionIndex: ${priorSelectionIndex}`)
     if (selectionIndex == 0 && priorSelectionIndex == (realSlideCount - 1))
     {
