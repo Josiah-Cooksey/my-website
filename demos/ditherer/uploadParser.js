@@ -5,10 +5,11 @@ form.onsubmit = async (event) =>
 
     const formData = new FormData(form);
 
+    // TODO: add logic to determine if custom image was uploaded to use in form instead of the image selected in the carousel
     const carousel = document.getElementById("carousel");
     const slides = carousel.querySelectorAll("img");
     const inputImageURL = slides[parseInt(carousel.dataset.selectedImageIndex) + 2].src;
-    
+
     const inputImageResponse = await fetch(inputImageURL);
     const inputImageBlob = await inputImageResponse.blob();
     formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");

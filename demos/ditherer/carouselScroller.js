@@ -1,3 +1,4 @@
+// TODO: support multiple carousels on single page
 const carousel = document.getElementById("carousel");
 const slides = carousel.querySelectorAll("div");
 let priorSelectionIndex = 1;
