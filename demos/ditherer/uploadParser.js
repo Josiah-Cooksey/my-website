@@ -5,7 +5,6 @@ form.onsubmit = async (event) =>
 
     const formData = new FormData(form);
 
-    // TODO: add logic to determine if custom image was uploaded to use in form instead of the image selected in the carousel
     if (form.inputImage.files.length == 0)
     {
         const carousel = document.getElementById("carousel");
@@ -17,6 +16,7 @@ form.onsubmit = async (event) =>
         formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");
     }
 
+    // TODO: add logic to determine if custom image was uploaded to use in form instead of the image selected in the carousel
     const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
     const kernelBlob = await kernelResponse.blob();
     formData.append("kernel", kernelBlob, "placeholderfilename.placeholderfiletype");
