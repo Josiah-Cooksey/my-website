@@ -42,47 +42,50 @@
                 </div>
                 <div class="p-2 m-2">
                     <div class="relative w-full max-w-lg mx-auto select-none">
-                        <!-- Carousel -->
-                        <div id="carousel" data-selected-image-index="0" class="w-full overflow-x-auto flex snap-x snap-mandatory rounded-2xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        <div id="carousel" data-selected-image-index="0" class="w-full items-center overflow-x-auto flex snap-x snap-mandatory rounded-xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                             
                             <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/neo_2/300/200" class="w-full rounded-xl" alt="Slide 4" draggable="false">
+                                <img src="./media/sample-images/lake.jpg" class="w-full rounded-xl" alt="lake next to a forest with a mountain in the background" draggable="false">
                             </div>
                             <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/bella/300/200" class="w-full rounded-xl" alt="Slide 5" draggable="false">
-                            </div>
-                            
-                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/millie/300/150" class="w-full rounded-xl" alt="Slide 1" draggable="false">
-                            </div>
-                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/millie_neo/300/200" class="w-full rounded-xl" alt="Slide 2" draggable="false">
-                            </div>
-                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/neo_banana/300/200" class="w-full rounded-xl" alt="Slide 3" draggable="false">
-                            </div>
-                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/neo_2/300/200" class="w-full rounded-xl" alt="Slide 4" draggable="false">
-                            </div>
-                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/bella/300/200" class="w-full rounded-xl" alt="Slide 5" draggable="false">
+                                <img src="./media/sample-images/puppies.jpg" class="w-full rounded-xl" alt="two small puppies alongside each other" draggable="false">
                             </div>
                             
                             <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/millie/300/150" class="w-full rounded-xl" alt="Slide 1" draggable="false">
+                                <img src="./media/sample-images/alley.jpg" class="w-full rounded-xl" alt="colourful alley or backyard that's paved" draggable="false">
                             </div>
                             <div class="flex-shrink-0 snap-center w-[80%] mx-2">
-                                <img src="https://placecats.com/millie_neo/300/200" class="w-full rounded-xl" alt="Slide 2" draggable="false">
+                                <img src="./media/sample-images/apple.jpg" class="w-full rounded-xl" alt="a single apple" draggable="false">
                             </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-images/happy-frog.png" class="w-full rounded-xl" alt="a frog that appears to be smiling" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-images/kitten.jpg" class="w-full rounded-xl" alt="a kitten" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-images/lake.jpg" class="w-full rounded-xl" alt="lake next to a forest with a mountain in the background" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-images/puppies.jpg" class="w-full rounded-xl" alt="two small puppies alongside each other" draggable="false">
+                            </div>
+                            
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-images/alley.jpg" class="w-full rounded-xl" alt="colourful alley or backyard that's paved" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-images/apple.jpg" class="w-full rounded-xl" alt="a single apple" draggable="false">
+                            </div>
+                            
                         </div>
 
-                        <button id="prevBtn" data-group="carousel-1-previous-button" class="font-bold absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">&lt;</button>
-                        <button id="nextBtn" data-group="carousel-1-next-button" class="font-bold absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70">&gt;</button>
+                        <button id="prevBtn" data-group="carousel-1-previous-button" class="font-bold h-full w-[10%] absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-xl hover:bg-black/70">&lt;</button>
+                        <button id="nextBtn" data-group="carousel-1-next-button" class="font-bold h-full w-[10%] absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 text-white p-2  rounded-xl hover:bg-black/70">&gt;</button>
                     </div>
                 </div>
                 <div class="p-2 m-2">
                     <form id="ditherUploadForm" action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data">
-                        <label for="inputImage" class="text-md">Input image:</label><br>
+                        <label for="inputImage" class="text-md">Or, upload your own image:</label><br>
                         <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2"><br>
                         <label for="kernel" class="text-md">Dithering kernel:</label><br>
                         <input accept=".png" type="file" id="kernel" name="kernel" class="m-2"><br>
