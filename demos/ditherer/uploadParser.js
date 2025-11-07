@@ -13,17 +13,27 @@ form.onsubmit = async (event) =>
 
         const inputImageResponse = await fetch(inputImageURL);
         const inputImageBlob = await inputImageResponse.blob();
+        // this line removes the existing form field with the same name first
+        formData.delete("inputImage");
         formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");
     }
 
     // TODO: add logic to determine if custom image was uploaded to use in form instead of the image selected in the carousel
-    const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
-    const kernelBlob = await kernelResponse.blob();
-    formData.append("kernel", kernelBlob, "placeholderfilename.placeholderfiletype");
 
-    const paletteResponse = await fetch("media/sample-palettes/palette.png");
-    const paletteBlob = await paletteResponse.blob();
-    formData.append("palette", paletteBlob, "placeholderfilename.placeholderfiletype");
+    if (form.kernel.files.length == 0)
+    {
+        const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
+        const kernelBlob = await kernelResponse.blob();
+        formData.delete("kernel");
+        formData.append("kernel", kernelBlob, "placeholderfilename.placeholderfiletype");
+    }
+    if (form.palette.files.length == 0)
+    {
+        const paletteResponse = await fetch("media/sample-palettes/palette.png");
+        const paletteBlob = await paletteResponse.blob();
+        formData.delete("palette");
+        formData.append("palette", paletteBlob, "placeholderfilename.placeholderfiletype");
+    }
 
     try
     {
