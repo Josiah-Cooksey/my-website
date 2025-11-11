@@ -102,18 +102,24 @@
                 <div>
                     <p class="text-xl text-center font-bold">Select Projects</p>
                     <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
-                        <div class="rounded-2xl shadow-xl m-4 w-64 flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                            <div class="p-2 m-2">
+                        <div class="rounded-2xl shadow-xl m-4 w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                            <div class="p-2 m-2 mx-auto">
                                 <h3 class="text-xl">Multi-colour Ditherer</h3>
                             </div>
-                            <div class="p-2 m-2 inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <div class="p-2 m-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
                                 <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
                                 <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
                             </div>
                             <!--TODO: add example image to make the purpose/functionality of the project clear
                             add LIVE DEMO or similar button-->
-                            <div class="p-2 m-2">
-                                <p class="text-sm">Dithers images using preset or custom palettes and kernels</h3>
+                            <div class="p-2 m-2 mx-auto">
+                                <p class="text-sm text-center">Renders images with only a few colours</p>
+                                <p class="text-sm text-center">Supports custom input images and palettes</p>
+                            </div>
+                            <div class="p-2 m-2 mx-auto flex">
+                                <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                                <p class="text-xl text-bold my-auto mx-1">➝</p>
+                                <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
                             </div>
                         </div>
                     </a>
