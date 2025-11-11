@@ -1,68 +1,82 @@
-// TODO: support multiple carousels on single page
-const carousel = document.getElementById("carousel");
-const slides = carousel.querySelectorAll("div");
-let priorSelectionIndex = 1;
-let selectionIndex = 0;
-const slideStyle = getComputedStyle(slides[0]);
-const slideWidth = slides[0].scrollWidth;
-// because the carousel always shows 3 slides, the carousel will hold all unique slides, in addition to the end 2 copied to the beginning and vice-versa
-// such as d e [a b c d e] a b
-// that way, we can simulate an infinite/looping carousel
-const realSlideCount = slides.length - 4;
-
-carousel.scrollTo({ left: slideWidth * 2, behavior: "auto" });
-
-
-function updateCarousel()
+class Carousel
 {
-    carousel.dataset.selectedImageIndex = selectionIndex;
-    console.log(`selectionIndex: ${selectionIndex}; priorSelectionIndex: ${priorSelectionIndex}`)
-    if (selectionIndex == 0 && priorSelectionIndex == (realSlideCount - 1))
+
+    constructor(carouselElement)
     {
-        console.log(`jumped from ${priorSelectionIndex} back to the beginning (${selectionIndex})`)
-        document.documentElement.setAttribute("style", "scroll-behavior: auto;");
-        // timeout so style is applied before scrolling
-        setTimeout(function() {
-            carousel.scrollTo({ left: slideWidth * 1});
-            document.documentElement.removeAttribute("style");
-            smoothCarouselTransition();
-        }, 0)
+        this.carousel = carouselElement;
+        this.slides = this.carousel.querySelectorAll("div");
+        this.priorSelectionIndex = 1;
+        this.selectionIndex = 0;
+        // const slideStyle = getComputedStyle(slides[0]);
+        this.slideWidth = this.slides[0].scrollWidth;
+        // because the carousel always shows 3 slides, the carousel will hold all unique slides, in addition to the end 2 copied to the beginning and vice-versa
+        // such as d e [a b c d e] a b
+        // that way, we can simulate an infinite/looping carousel
+        this.realSlideCount = this.slides.length - 4;
+
+        this.carousel.scrollTo({ left: this.slideWidth * 2, behavior: "auto" });
+
+        let carouselButtons = this.carousel.querySelectorAll("[data-group='carousel-button']");
+        console.log(carouselButtons);
+        carouselButtons[0].addEventListener("click", () => this.prevClick());
+        carouselButtons[1].addEventListener("click", () => this.nextClick());
     }
-    else if (selectionIndex == (realSlideCount - 1) && priorSelectionIndex == 0)
+
+    prevClick()
     {
-        console.log(`jumped from ${priorSelectionIndex} to the end (${selectionIndex})`)
-        document.documentElement.setAttribute("style", "scroll-behavior: auto;");
-        setTimeout(function() {
-            carousel.scrollTo({ left: slideWidth * (2 + realSlideCount)});
-            document.documentElement.removeAttribute("style");
-            smoothCarouselTransition();
-        }, 0)
+        this.priorSelectionIndex = this.selectionIndex;
+        this.selectionIndex = (this.selectionIndex - 1 + this.realSlideCount) % this.realSlideCount;
+        this.updateCarousel();
     }
-    else
+
+    nextClick()
     {
-        smoothCarouselTransition();
+        this.priorSelectionIndex = this.selectionIndex;
+        this.selectionIndex = (this.selectionIndex + 1) % (this.realSlideCount);
+        this.updateCarousel();
+    }
+
+    smoothCarouselTransition()
+    {
+        console.log(`smooth transition from ${this.priorSelectionIndex} to ${this.selectionIndex}`)
+        this.carousel.scrollTo({ left: this.slideWidth * (this.selectionIndex + 2), behavior: "smooth" });
+    }
+
+    updateCarousel()
+    {
+        this.carousel.dataset.selectedImageIndex = this.selectionIndex;
+        console.log(`selectionIndex: ${this.selectionIndex}; priorSelectionIndex: ${this.priorSelectionIndex}`)
+        if (this.selectionIndex == 0 && this.priorSelectionIndex == (this.realSlideCount - 1))
+        {
+            console.log(`jumped from ${this.priorSelectionIndex} back to the beginning (${this.selectionIndex})`)
+            document.documentElement.setAttribute("style", "scroll-behavior: auto;");
+            // timeout so style is applied before scrolling
+            setTimeout(() => {
+                this.carousel.scrollTo({ left: this.slideWidth * 1});
+                document.documentElement.removeAttribute("style");
+                this.smoothCarouselTransition();
+            }, 0)
+        }
+        else if (this.selectionIndex == (this.realSlideCount - 1) && this.priorSelectionIndex == 0)
+        {
+            console.log(`jumped from ${this.priorSelectionIndex} to the end (${this.selectionIndex})`)
+            document.documentElement.setAttribute("style", "scroll-behavior: auto;");
+            setTimeout(() => {
+                this.carousel.scrollTo({ left: this.slideWidth * (2 + this.realSlideCount)});
+                document.documentElement.removeAttribute("style");
+                this.smoothCarouselTransition();
+            }, 0)
+        }
+        else
+        {
+            this.smoothCarouselTransition();
+        }
     }
 }
 
-function instantCarouselJump(jumpLeft)
-{
+let carouselElements = document.querySelectorAll("[data-group='carousel']");
+const carousels = [];
+carouselElements.forEach(carousel => {
+    carousels.push(new Carousel(carousel));
+});
 
-}
-
-function smoothCarouselTransition()
-{
-    console.log(`smooth transition from ${priorSelectionIndex} to ${selectionIndex}`)
-    carousel.scrollTo({ left: slideWidth * (selectionIndex + 2), behavior: "smooth" });
-}
-
-document.getElementById("nextBtn").onclick = () => {
-    priorSelectionIndex = selectionIndex;
-    selectionIndex = (selectionIndex + 1) % (realSlideCount);
-    updateCarousel();
-};
-
-document.getElementById("prevBtn").onclick = () => {
-    priorSelectionIndex = selectionIndex;
-    selectionIndex = (selectionIndex - 1 + realSlideCount) % realSlideCount;
-    updateCarousel();
-};
