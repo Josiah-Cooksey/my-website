@@ -7,7 +7,7 @@ form.onsubmit = async (event) =>
 
     if (form.inputImage.files.length == 0)
     {
-        const carousel = document.getElementById("carousel");
+        const carousel = document.getElementById("inputImageCarousel");
         const slides = carousel.querySelectorAll("img");
         const inputImageURL = slides[parseInt(carousel.dataset.selectedImageIndex) + 2].src;
 
