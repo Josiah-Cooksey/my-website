@@ -36,13 +36,13 @@
             </div>
         </header>
         <section>
-            <div class="m-4 w-96 rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 mx-auto bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <div class="p-2 m-2">
-                    <h2>This is where the demo front-end would be displayed with a clear usage example and some preset options so people don't <i>need</i> to upload anything</h2>
+            <div class="m-4 w-full min-w-[320px] max-w-[600px] mx-auto rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                <div class="p-2 m-2 mx-auto">
+                    <h1 class="text-xl">Select an image:</h2>
                 </div>
-                <div class="p-2 m-2">
+                <div class="p-2 m-2 mx-auto">
                     <div class="relative w-full max-w-lg mx-auto select-none">
-                        <div id="carousel" data-selected-image-index="0" class="w-full items-center overflow-x-auto flex snap-x snap-mandatory rounded-xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        <div id="inputImageCarousel" data-selected-image-index="0" data-group="carousel" class="touch-pan-y w-full items-center overflow-x-auto flex snap-x snap-mandatory rounded-xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                             
                             <div class="flex-shrink-0 snap-center w-[80%] mx-2">
                                 <img src="./media/sample-images/lake.png" class="w-full rounded-xl" alt="lake next to a forest with a mountain in the background" draggable="false">
@@ -76,21 +76,29 @@
                             <div class="flex-shrink-0 snap-center w-[80%] mx-2">
                                 <img src="./media/sample-images/apple.png" class="w-full rounded-xl" alt="a single apple" draggable="false">
                             </div>
-                            
-                        </div>
 
-                        <button id="prevBtn" data-group="carousel-1-previous-button" class="font-bold h-full w-[10%] absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-xl hover:bg-black/70">&lt;</button>
-                        <button id="nextBtn" data-group="carousel-1-next-button" class="font-bold h-full w-[10%] absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 text-white p-2  rounded-xl hover:bg-black/70">&gt;</button>
+                            <button data-group="carousel-button" class="font-bold h-full w-[10%] absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-xl hover:bg-black/70">&lt;</button>
+                            <button data-group="carousel-button" class="font-bold h-full w-[10%] absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 text-white p-2  rounded-xl hover:bg-black/70">&gt;</button>
+                        </div>
                     </div>
                 </div>
                 <div class="p-2 m-2">
-                    <form id="ditherUploadForm" action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data">
-                        <label for="inputImage" class="text-md">Or, upload your own image:</label><br>
-                        <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2"><br>
-                        <label for="kernel" class="text-md">Dithering kernel:</label><br>
-                        <input accept=".png" type="file" id="kernel" name="kernel" class="m-2"><br>
-                        <label for="palette" class="text-md">Palette:</label><br>
-                        <input accept=".png" type="file" id="palette" name="palette" class="m-2">
+                    <form id="ditherUploadForm" action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data" autocomplete="off">
+                        <input type="checkbox" id="showCustomImageForm" onclick="
+                            checkbox = document.getElementById('showCustomImageForm');
+                            formInputs = document.querySelectorAll('input:not(#showCustomImageForm), label:not([for=\'showCustomImageForm\'])');
+                            formInputs.forEach(element => {
+                                element.hidden = !checkbox.checked;
+                                element.disabled = !checkbox.checked;
+                            });
+                        ">
+                        <label for="showCustomImageForm" class="text-md">Or, upload a custom image:</label><br>
+                        <label for="inputImage" class="text-md" hidden>Input image:</label><br>
+                        <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" hidden disabled><br>
+                        <label for="kernel" class="text-md" hidden>Dithering kernel:</label><br>
+                        <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" hidden disabled><br>
+                        <label for="palette" class="text-md" hidden>Palette:</label><br>
+                        <input accept=".png" type="file" id="palette" name="palette" class="m-2" hidden disabled>
                         <button type="submit" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload</button>
                     </form>
                 </div>
