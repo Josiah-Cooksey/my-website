@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-2 m-2">
+                <div class="p-2 m-2 mx-auto">
                     <form id="ditherUploadForm" action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data" autocomplete="off">
                         <input type="checkbox" id="showCustomImageForm" onclick="
                             checkbox = document.getElementById('showCustomImageForm');
@@ -92,21 +92,23 @@
                                 element.disabled = !checkbox.checked;
                             });
                         ">
-                        <label for="showCustomImageForm" class="text-md">Or, upload a custom image:</label><br>
+                        <label for="showCustomImageForm" class="text-md">Or, upload a custom image</label><br>
                         <label for="inputImage" class="text-md" hidden>Input image:</label><br>
+                        <button type="button" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload Image</button>
                         <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" hidden disabled><br>
                         <label for="kernel" class="text-md" hidden>Dithering kernel:</label><br>
                         <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" hidden disabled><br>
                         <label for="palette" class="text-md" hidden>Palette:</label><br>
-                        <input accept=".png" type="file" id="palette" name="palette" class="m-2" hidden disabled>
-                        <button type="submit" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload</button>
+                        <input accept=".png" type="file" id="palette" name="palette" class="m-2" hidden disabled><br>
+                        <button type="submit" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Submit</button>
                     </form>
+                </div>
+                
+                <div class="p-2 m-2">
+                    <img id="resultImageHolder" alt="dithered result image after processing is complete" hidden>
                 </div>
             </div>
         </section>
-        <div class="p-2 m-2">
-            <img id="resultImageHolder" alt="dithered result image after processing is complete">
-        </div>
         <script src="uploadParser.js"></script>
         <script src="carouselScroller.js"></script>
     </body>
