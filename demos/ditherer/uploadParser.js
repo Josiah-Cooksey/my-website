@@ -18,8 +18,6 @@ form.onsubmit = async (event) =>
         formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");
     }
 
-    // TODO: add logic to determine if custom image was uploaded to use in form instead of the image selected in the carousel
-
     if (form.kernel.files.length == 0)
     {
         const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
@@ -47,8 +45,9 @@ form.onsubmit = async (event) =>
         
         if ("error" in jsonResult)
         {
-            const errorField = document.getElementById("errorDisplay");
-            errorField.textContent = jsonResult["error"];
+            const errorTextField = document.getElementById("errorTextField");
+            errorTextField.textContent = `An error occurred whilst processing your input. Details:\n${jsonResult["error"]}`;
+            errorTextField.hidden = false;
             return;
         }
         const imageElement = document.getElementById("resultImageHolder");
@@ -58,5 +57,9 @@ form.onsubmit = async (event) =>
     catch (error)
     {
         console.error(error);
+        const errorTextField = document.getElementById("errorTextField");
+        errorTextField.textContent = `A problem occured during parsing. Please refresh the page before trying again. Details:\n${error}`;
+        errorTextField.hidden = false;
+        return;
     }
 }
