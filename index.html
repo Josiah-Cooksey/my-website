@@ -6,6 +6,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Portfolio website of Josiah Cooksey, showcasing software projects, experience, and possibly blog posts.">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
 
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
@@ -61,6 +66,7 @@
         </div-->
         <div class="flex flex-col md:flex-row">
             <section>
+                <p class="text-xl text-center font-bold">About Me</p>
                 <div class="w-[320px] rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 mx-auto bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
                     <img class="object-cover w-[128px] h-[128px] rounded-full bg-white m-3" src="./media/landing-page/dithered.png" alt="headshot of Josiah Cooksey with a dithered filter applied"><!--may want to add style="image-rendering: pixelated;" but I think that it looks fine with the default interpolation-->
                     <div class="py-3 flex flex-col max-w-xl">
@@ -92,61 +98,19 @@
                     <div class="p-2 m-2">
                         <h3 class="text-xl font-bold">Josiah Cooksey</h3>
                         <p class="text-gray-500 text-sm mb-2">Illinois, United States of America</p>
-                        <p class="text-gray-500 text-sm">Full-stack developer who enjoys the algorithmic, puzzle-solving side of programming.</p>
+                        <p class="text-gray-500 text-sm">Software developer who enjoys the algorithmic, puzzle-solving side of programming.</p>
                         <br>
-                        <p class="text-sm">B.Sc. in Computer Science (WGU, completed in 5 months) · Python automation experience · Full-stack development with Spring Boot & Angular</p>
+                        <ul class="text-sm list-disc">
+                            <li>B.Sc. in Computer Science (WGU, completed in 5 months)</li>
+                            <li>Python automation experience</li>
+                            <li>Full-stack development with Spring Boot & Angular</li>
+                        </ul>
                     </div>
                 </div>
             </section>
             <section id="projects" class="w-full">
                 <p class="text-xl text-center font-bold">Select Projects</p>
-                <div class="flex flex-wrap gap-4 p-4">
-                    <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="flex text-blue-600 dark:text-blue-400 hover:underline">
-                        <div class="mx-auto my-2 rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                            <div class="p-2 m-2 mx-auto">
-                                <h3 class="text-xl">Multi-colour Ditherer</h3>
-                            </div>
-                            <div class="p-2 m-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
-                                <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
-                                <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
-                            </div>
-                            <!--TODO: add LIVE DEMO or similar button-->
-                            <div class="p-2 m-2 mx-auto">
-                                <p class="text-sm text-center">Renders images with only a few colours</p>
-                                <p class="text-sm text-center">Supports custom input images and palettes</p>
-                            </div>
-                            <div class="p-2 m-2 mx-auto flex">
-                                <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
-                                <p class="text-xl text-bold my-auto mx-1">➝</p>
-                                <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
-                            </div>
-                        </div>
-                    </a>
-
-                    
-                    <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="flex text-blue-600 dark:text-blue-400 hover:underline">
-                        <div class="mx-auto my-2 rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                            <div class="p-2 m-2 mx-auto">
-                                <h3 class="text-xl">Multi-colour Ditherer</h3>
-                            </div>
-                            <div class="p-2 m-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
-                                <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
-                                <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
-                            </div>
-                            <!--TODO: add LIVE DEMO or similar button-->
-                            <div class="p-2 m-2 mx-auto">
-                                <p class="text-sm text-center">Renders images with only a few colours</p>
-                                <p class="text-sm text-center">Supports custom input images and palettes</p>
-                            </div>
-                            <div class="p-2 m-2 mx-auto flex">
-                                <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
-                                <p class="text-xl text-bold my-auto mx-1">➝</p>
-                                <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
-                            </div>
-                        </div>
-                    </a>
-
-                    
+                <div class="flex flex-wrap gap-4 px-4">
                     <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="flex text-blue-600 dark:text-blue-400 hover:underline">
                         <div class="mx-auto my-2 rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
                             <div class="p-2 m-2 mx-auto">
