@@ -17,7 +17,6 @@ class Carousel
         this.carousel.scrollTo({ left: this.slideWidth * 2, behavior: "auto" });
 
         let carouselButtons = this.carousel.querySelectorAll("[data-carousel-aspect='carousel-button']");
-        console.log(carouselButtons);
         carouselButtons[0].addEventListener("click", () => this.prevClick());
         carouselButtons[1].addEventListener("click", () => this.nextClick());
     }
