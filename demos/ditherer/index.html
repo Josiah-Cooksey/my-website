@@ -42,10 +42,16 @@
         </header>
         <section>
             <div class="m-4 w-full min-w-[320px] max-w-[600px] mx-auto rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <div data-group="inputImageStage" class="p-2 m-2 mx-auto">
-                    <h1 class="text-xl">Use the arrows to select an image:</h2>
+                <div class="p-2 m-2 mx-auto" data-group="inputImageStage">
+                    <h1 class="text-2xl text-center">STEP 1/3</h1>
+                    <h2 class="text-xl mb-2 text-center">Choose image source</h2>
+                    <input type="radio" id="useInputImageCarousel" name="color" value="carousel" checked>
+                    <label for="useInputImageCarousel" class="text-md">Carousel — use arrows to pick an image</label>
+                    <br>
+                    <input type="radio" id="useInputImageUpload" name="color" value="useInputImageUpload">
+                    <label for="useInputImageUpload" class="text-md">Upload — choose a custom image</label>
                 </div>
-                <div class="p-2 m-2 mx-auto">
+                <div class="p-2 m-2 mx-auto"id="inputImageCarouselHolder" data-group="inputImageStage">
                     <div class="relative w-full max-w-lg mx-auto select-none">
                         <div id="inputImageCarousel" data-selected-image-index="0" data-carousel-aspect="carousel" class="touch-pan-y w-full items-center overflow-x-auto flex snap-x snap-mandatory rounded-xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                             
@@ -100,18 +106,27 @@
                                 });
                             ">
                         </div>
-                        <label for="inputImage" class="text-md" hidden>Input image:</label>
-                        <button type="button" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload Image</button>
-                        <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" hidden disabled>
-                        <label for="kernel" class="text-md" hidden>Dithering kernel:</label>
-                        <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" hidden disabled>
-                        <label for="palette" class="text-md" hidden>Palette:</label>
-                        <input accept=".png" type="file" id="palette" name="palette" class="m-2" hidden disabled>
+                        <div data-group="inputImageStage">
+                            <label for="inputImage" class="text-md" hidden>Input image:</label>
+                            <button type="button" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload Image</button>
+                            <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" hidden disabled>
+                        </div>
+                        
+                        <div data-group="kernelStage">
+                            <label for="kernel" class="text-md" hidden>Dithering kernel:</label>
+                            <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" hidden disabled>
+                        </div>
+                        
+                        <div data-group="paletteStage">
+                            <label for="palette" class="text-md" hidden>Palette:</label>
+                            <input accept=".png" type="file" id="palette" name="palette" class="m-2" hidden disabled>
+                        </div>
+
                         <button type="submit" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Submit</button>
                     </form>
                 </div>
                 
-                <div class="p-2 m-2">
+                <div class="p-2 m-2" data-group="outputImageStage">
                     <img id="resultImageHolder" alt="dithered result image after processing is complete" hidden>
                 </div>
             </div>
