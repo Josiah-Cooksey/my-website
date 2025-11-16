@@ -42,16 +42,30 @@
         </header>
         <section>
             <div class="m-4 w-full min-w-[320px] max-w-[600px] mx-auto rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <div class="p-2 m-2 mx-auto" data-group="inputImageStage">
+                <div class="p-2 m-2 mx-auto w-full" data-group="inputImageStage">
                     <h1 class="text-2xl text-center">STEP 1/3</h1>
                     <h2 class="text-xl mb-2 text-center">Choose image source</h2>
-                    <input type="radio" id="useInputImageCarousel" name="color" value="carousel" checked>
-                    <label for="useInputImageCarousel" class="text-md">Carousel — use arrows to pick an image</label>
-                    <br>
-                    <input type="radio" id="useInputImageUpload" name="color" value="useInputImageUpload">
-                    <label for="useInputImageUpload" class="text-md">Upload — choose a custom image</label>
+                    <div class="w-full">
+                        <div class="block w-max mx-auto">
+                            <div>
+                                <input type="radio" id="useInputImageCarousel" name="color" value="carousel" checked onclick="
+                                    document.getElementById('inputImageCarouselHolder').hidden = !this.checked;
+                                    document.getElementById('inputImageUpload').hidden = this.checked;
+                                ">
+                                <label for="useInputImageCarousel" class="text-md">Carousel — use arrows to pick an image</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" id="useInputImageUpload" name="color" value="useInputImageUpload" onclick="
+                                    document.getElementById('inputImageCarouselHolder').hidden = this.checked;
+                                    document.getElementById('inputImageUpload').hidden = !this.checked;
+                                ">
+                                <label for="useInputImageUpload" class="text-md">Upload — choose a custom image</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-2 m-2 mx-auto"id="inputImageCarouselHolder" data-group="inputImageStage">
+                <div class="p-2 m-2 mx-auto" id="inputImageCarouselHolder" data-group="inputImageStage">
                     <div class="relative w-full max-w-lg mx-auto select-none">
                         <div id="inputImageCarousel" data-selected-image-index="0" data-carousel-aspect="carousel" class="touch-pan-y w-full items-center overflow-x-auto flex snap-x snap-mandatory rounded-xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                             
@@ -95,18 +109,7 @@
                 </div>
                 <div class="p-2 m-2 mx-auto">
                     <form id="ditherUploadForm" action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data" autocomplete="off">
-                        <div class="block">
-                            <label for="showCustomImageForm" class="text-md">Or, upload a custom image</label>
-                            <input type="checkbox" id="showCustomImageForm" onclick="
-                                checkbox = document.getElementById('showCustomImageForm');
-                                formInputs = document.querySelectorAll('input:not(#showCustomImageForm), label:not([for=\'showCustomImageForm\'])');
-                                formInputs.forEach(element => {
-                                    element.hidden = !checkbox.checked;
-                                    element.disabled = !checkbox.checked;
-                                });
-                            ">
-                        </div>
-                        <div data-group="inputImageStage">
+                        <div id="inputImageUpload" data-group="inputImageStage">
                             <label for="inputImage" class="text-md" hidden>Input image:</label>
                             <button type="button" class="my-3 bg-blue-500 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Upload Image</button>
                             <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" hidden disabled>
