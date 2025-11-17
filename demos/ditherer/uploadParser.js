@@ -27,7 +27,7 @@ form.onsubmit = async (event) =>
     }
     if (form.palette.files.length == 0)
     {
-        const paletteResponse = await fetch("media/sample-palettes/palette.png");
+        const paletteResponse = await fetch("media/sample-palettes/printer colors.png");
         const paletteBlob = await paletteResponse.blob();
         formData.delete("palette");
         formData.append("palette", paletteBlob, "placeholderfilename.placeholderfiletype");
