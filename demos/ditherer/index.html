@@ -42,11 +42,11 @@
         </header>
         <section>
             <div class="m-4 w-full min-w-[320px] max-w-[600px] mx-auto rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-                <div class="p-2 m-2 mx-auto w-full" data-group="inputImageStage">
+                <div class="p-2 m-2 mx-auto w-full" data-group-stage="inputImage">
                     <div class="flex">
-                        <button class="bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full">Prior Step</button>
+                        <button class="bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" data-stage-aspect="navButton">Prior Step</button>
                         <div class="mx-auto"></div>
-                        <button class="bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full">Next Step</button>
+                        <button class="bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" data-stage-aspect="navButton">Next Step</button>
                     </div>
                     <p class="text-2xl text-center">STEP 1/3</p>
                     <p class="text-xl mb-2 text-center">Choose image source</p>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-2 m-2 mx-auto w-full" id="inputImageCarouselHolder" data-group="inputImageStage">
+                <div class="p-2 m-2 mx-auto w-full" id="inputImageCarouselHolder" data-group-stage="inputImage">
                     <div class="relative w-full max-w-lg mx-auto select-none">
                         <div id="inputImageCarousel" data-selected-image-index="0" data-carousel-aspect="carousel" class="touch-pan-y w-full items-center overflow-x-auto flex snap-x snap-mandatory rounded-xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                             
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-2 m-2 mx-auto w-full" id="paletteImageCarouselHolder" data-group="paletteStage">
+                <div class="p-2 m-2 mx-auto w-full" id="paletteImageCarouselHolder" data-group-stage="palette">
                     <div class="relative w-full max-w-lg mx-auto select-none">
                         <div id="paletteImageCarousel" data-selected-image-index="0" data-carousel-aspect="carousel" class="touch-pan-y w-full items-center overflow-x-auto flex snap-x snap-mandatory rounded-xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                             
@@ -151,7 +151,7 @@
                 </div>
                 <div class="m-2 mx-auto w-full">
                     <form id="ditherUploadForm" action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data" autocomplete="off">
-                        <div id="inputImageUpload" data-group="inputImageStage" hidden>
+                        <div id="inputImageUpload" data-group-stage="inputImage" hidden>
                             <label for="inputImage" class="sr-only">Input image:</label>
                             <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onclick="
                                 document.getElementById('inputImage').click();
@@ -159,12 +159,12 @@
                             <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" hidden>
                         </div>
                         
-                        <div data-group="paletteStage">
+                        <div data-group-stage="palette">
                             <label for="palette" class="text-md" hidden>Palette:</label>
                             <input accept=".png" type="file" id="palette" name="palette" class="m-2" hidden>
                         </div>
                         
-                        <div data-group="kernelStage">
+                        <div data-group-stage="kernel">
                             <label for="kernel" class="text-md" hidden>Dithering kernel:</label>
                             <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" hidden>
                         </div>
@@ -173,12 +173,13 @@
                     </form>
                 </div>
                 
-                <div class="m-2 mx-auto w-full" data-group="outputImageStage">
+                <div class="m-2 mx-auto w-full" data-group-stage="outputImage">
                     <img id="resultImageHolder" alt="dithered result image after processing is complete" hidden>
                 </div>
             </div>
         </section>
         <script src="uploadParser.js"></script>
         <script src="carouselScroller.js"></script>
+        <script type="module" src="GUIStageManager.js"></script>
     </body>
 </html>
