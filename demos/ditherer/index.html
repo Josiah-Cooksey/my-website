@@ -112,6 +112,43 @@
                         </div>
                     </div>
                 </div>
+                <div class="p-2 m-2 mx-auto w-full" id="paletteImageCarouselHolder" data-group="paletteStage">
+                    <div class="relative w-full max-w-lg mx-auto select-none">
+                        <div id="paletteImageCarousel" data-selected-image-index="0" data-carousel-aspect="carousel" class="touch-pan-y w-full items-center overflow-x-auto flex snap-x snap-mandatory rounded-xl px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                            
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-palettes/neon.png" class="image-rendering-pixelated [image-rendering:pixelated] w-full rounded-xl" alt="the colors green, cyan, and magenta" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-palettes/red, green, and blue.png" class="image-rendering-pixelated [image-rendering:pixelated] w-full rounded-xl" alt="the colors red, green, and blue" draggable="false">
+                            </div>
+                            
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-palettes/printer colors.png" class="image-rendering-pixelated [image-rendering:pixelated] w-full rounded-xl" alt="the colors cyan, magenta, yellow, black, and white" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-palettes/black and white.png" class="image-rendering-pixelated [image-rendering:pixelated] w-full rounded-xl" alt="the colors black and white" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-palettes/neon.png" class="image-rendering-pixelated [image-rendering:pixelated] w-full rounded-xl" alt="the colors green, cyan, and magenta" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-palettes/red, green, and blue.png" class="image-rendering-pixelated [image-rendering:pixelated] w-full rounded-xl" alt="the colors red, green, and blue" draggable="false">
+                            </div>
+                            
+
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-palettes/printer colors.png" class="image-rendering-pixelated [image-rendering:pixelated] w-full rounded-xl" alt="the colors cyan, magenta, yellow, black, and white" draggable="false">
+                            </div>
+                            <div class="flex-shrink-0 snap-center w-[80%] mx-2">
+                                <img src="./media/sample-palettes/black and white.png" class="image-rendering-pixelated [image-rendering:pixelated] w-full rounded-xl" alt="the colors black and white" draggable="false">
+                            </div>
+                            
+                            <button data-carousel-aspect="carousel-button" class="font-bold h-full w-[10%] absolute top-1/2 left-0 -translate-y-1/2 bg-black/50 text-white p-2 rounded-xl hover:bg-black/70">&lt;</button>
+                            <button data-carousel-aspect="carousel-button" class="font-bold h-full w-[10%] absolute top-1/2 right-0 -translate-y-1/2 bg-black/50 text-white p-2  rounded-xl hover:bg-black/70">&gt;</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="m-2 mx-auto w-full">
                     <form id="ditherUploadForm" action="https://api.jcooksey.dev/ditherer/dither" method="POST" enctype="multipart/form-data" autocomplete="off">
                         <div id="inputImageUpload" data-group="inputImageStage" hidden>
@@ -122,14 +159,14 @@
                             <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" hidden>
                         </div>
                         
-                        <div data-group="kernelStage">
-                            <label for="kernel" class="text-md" hidden>Dithering kernel:</label>
-                            <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" hidden>
-                        </div>
-                        
                         <div data-group="paletteStage">
                             <label for="palette" class="text-md" hidden>Palette:</label>
                             <input accept=".png" type="file" id="palette" name="palette" class="m-2" hidden>
+                        </div>
+                        
+                        <div data-group="kernelStage">
+                            <label for="kernel" class="text-md" hidden>Dithering kernel:</label>
+                            <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" hidden>
                         </div>
 
                         <button type="submit" class="my-3 bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full">Submit</button>
