@@ -1,6 +1,8 @@
 class Carousel
 {
-
+    // TODO: fix that spamming the scroll buttons causes visible jerkiness during the instant jumps that are for looping
+    // possible solution is to have a variable that tracks whether a smooth scroll is in progress
+    // and if it is, then the instant jump only happens after a smooth scroll completes
     constructor(carouselElement)
     {
         this.carousel = carouselElement;
