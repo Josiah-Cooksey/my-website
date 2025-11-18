@@ -22,6 +22,7 @@ class GUIStageManager
         this.stepHandler = stepHandler;
         this.navButtons = navButtons;
         this.stepHandler.eventHandler.on("stepChange", this.handleStepChange.bind(this));
+        this.navButtons[2].addEventListener("click", () => this.handleStepChange({step: 3, lastStep: 2}));
     }
 
     getStageName(stageIndex)
@@ -44,6 +45,8 @@ class GUIStageManager
                 {
                     this.navButtons[0].hidden = true;
                 }
+                // TODO: avoid tracking which step we were last on and instead update visibility strictly based on current step
+                this.navButtons[1].hidden = false;
                 this.hideStageGroup(STAGENAMES[STAGES.PALETTE]);
                 break;
 
@@ -71,6 +74,21 @@ class GUIStageManager
                 }
                 this.navButtons[2].hidden = false;
                 this.hideStageGroup(STAGENAMES[stepData.lastStep]);
+                break;
+
+            case STAGES.OUTPUTIMAGE:
+                document.getElementById("stepDisplay").textContent = `Result:`;
+                document.getElementById("stepInstruction").textContent = "Press the back button to input another image for dithering.";
+                this.showStageGroup(STAGENAMES[STAGES.OUTPUTIMAGE]);
+                if (stepData.lastStep == STAGES.KERNEL)
+                {
+                    this.navButtons[1].hidden = true;
+                }
+                this.navButtons[2].hidden = true;
+                this.hideStageGroup(STAGENAMES[stepData.lastStep]);
+                // TODO: address this lazy fix that may cause issues later
+                this.stepHandler.step = 1;
+                this.stepHandler.lastStep = 2;
                 break;
         }
     }
