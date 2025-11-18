@@ -49,12 +49,12 @@
                         <button class="bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" data-stage-aspect="navButton">Next Step</button>
                         <button id="formSubmittor" form="ditherUploadForm" type="submit" data-stage-aspect="navButton" class="bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" hidden>Submit</button>
                     </div>
-                    <p class="text-2xl text-center">STEP 1/3</p>
-                    <p class="text-xl mb-2 text-center">Choose image source</p>
+                    <p id="stepDisplay" class="text-2xl text-center">STEP 1/3</p>
+                    <p id="stepInstruction" class="text-xl mb-2 text-center">Choose image source</p>
                     <div class="w-full">
-                        <div class="block w-max mx-auto">
+                        <div class="w-max mx-auto" data-group-stage="inputImage">
                             <div>
-                                <input type="radio" id="useInputImageCarousel" name="color" value="carousel" checked onclick="
+                                <input type="radio" id="useInputImageCarousel" name="inputImageSource" value="carousel" checked onclick="
                                     document.getElementById('inputImageCarouselHolder').hidden = !this.checked;
                                     document.getElementById('inputImageUpload').hidden = this.checked;
                                 ">
@@ -62,11 +62,30 @@
                             </div>
                             
                             <div>
-                                <input type="radio" id="useInputImageUpload" name="color" value="useInputImageUpload" onclick="
+                                <input type="radio" id="useInputImageUpload" name="inputImageSource" value="upload" onclick="
                                     document.getElementById('inputImageCarouselHolder').hidden = this.checked;
                                     document.getElementById('inputImageUpload').hidden = !this.checked;
                                 ">
                                 <label for="useInputImageUpload" class="text-md">Upload — choose a custom image</label>
+                            </div>
+                        </div>
+
+                        
+                        <div class="w-max mx-auto" data-group-stage="palette" hidden>
+                            <div>
+                                <input type="radio" id="usepaletteCarousel" name="paletteSource" value="carousel" checked onclick="
+                                    document.getElementById('paletteImageCarouselHolder').hidden = !this.checked;
+                                    document.getElementById('paletteUpload').hidden = this.checked;
+                                ">
+                                <label for="usepaletteCarousel" class="text-md">Carousel — use arrows to pick a palette</label>
+                            </div>
+                            
+                            <div>
+                                <input type="radio" id="usepaletteUpload" name="paletteSource" value="upload" onclick="
+                                    document.getElementById('paletteImageCarouselHolder').hidden = this.checked;
+                                    document.getElementById('paletteUpload').hidden = !this.checked;
+                                ">
+                                <label for="usepaletteUpload" class="text-md">Upload — choose a custom palette</label>
                             </div>
                         </div>
                     </div>
