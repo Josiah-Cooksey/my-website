@@ -35,7 +35,12 @@ class GUIStageManager
         console.log(`step changed to ${stepData.step}; lastStep changed to ${stepData.lastStep}`);
         document.getElementById("stepDisplay").textContent = `STEP ${stepData.step + 1}/3`;
         
-        document.querySelectorAll("[data-group-stage]:not(.hidden)").hidden = true;
+        // TODO: track the visibility state of elements using data- attributes 
+        // for example, data-default-hidden="true" means that when that stage is active, the element should remain hidden
+        let visibleStageElements = document.querySelectorAll("[data-group-stage]:not(.hidden)");
+        visibleStageElements.forEach(element => {
+            element.hidden = true;
+        });
         switch (stepData.step)
         {
             case STAGES.INPUTIMAGE:
@@ -97,6 +102,10 @@ class GUIStageManager
     {
         let stageElements = document.querySelectorAll(`[data-group-stage='${stageGroupName}']`);
         stageElements.forEach(element => {
+            if (element.dataset.defaultHidden && !hideElement)
+            {
+                return;
+            }
             element.hidden = hideElement;
         });
     }
