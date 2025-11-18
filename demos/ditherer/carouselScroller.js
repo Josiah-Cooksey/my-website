@@ -10,7 +10,23 @@ class Carousel
         this.priorSelectionIndex = 1;
         this.selectionIndex = 0;
         // const slideStyle = getComputedStyle(slides[0]);
-        this.slideWidth = this.slides[0].scrollWidth;
+        
+        // hacky fix for carousels that start out hidden
+        // because otherwise the scrollWidth is 0
+        if (this.slides[0].offsetParent == null)
+        {
+            this.carousel.parentElement.parentElement.hidden = false;
+            requestAnimationFrame(() => {
+                console.log("used requestanimframe")
+            });
+            this.slideWidth = this.slides[0].scrollWidth;
+            this.carousel.parentElement.parentElement.hidden = true;
+        }
+        else
+        {
+            this.slideWidth = this.slides[0].scrollWidth;
+        }
+        
         // because the carousel always shows 3 slides, the carousel will hold all unique slides, in addition to the end 2 copied to the beginning and vice-versa
         // such as d e [a b c d e] a b
         // that way, we can simulate an infinite/looping carousel
