@@ -5,7 +5,7 @@ form.onsubmit = async (event) =>
 
     const formData = new FormData(form);
 
-    if (form.inputImage.files.length == 0)
+    if (form.inputImage.files.length == 0 || document.getElementById("useInputImageCarousel").checked)
     {
         const carousel = document.getElementById("inputImageCarousel");
         const slides = carousel.querySelectorAll("img");
@@ -17,20 +17,19 @@ form.onsubmit = async (event) =>
         formData.delete("inputImage");
         formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");
     }
-
-    if (form.kernel.files.length == 0)
-    {
-        const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
-        const kernelBlob = await kernelResponse.blob();
-        formData.delete("kernel");
-        formData.append("kernel", kernelBlob, "placeholderfilename.placeholderfiletype");
-    }
-    if (form.palette.files.length == 0)
+    if (form.palette.files.length == 0 || document.getElementById("useInputImageUpload").checked)
     {
         const paletteResponse = await fetch("media/sample-palettes/printer colors.png");
         const paletteBlob = await paletteResponse.blob();
         formData.delete("palette");
         formData.append("palette", paletteBlob, "placeholderfilename.placeholderfiletype");
+    }
+    if (form.kernel.files.length == 0)// || document.getElementById("useKernelCarousel").checked)
+    {
+        const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
+        const kernelBlob = await kernelResponse.blob();
+        formData.delete("kernel");
+        formData.append("kernel", kernelBlob, "placeholderfilename.placeholderfiletype");
     }
 
     try
