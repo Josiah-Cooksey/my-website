@@ -11,7 +11,7 @@ const STAGENAMES = Object.freeze([
     "inputImage",
     "palette",
     "kernel",
-    "outputimage"
+    "outputImage"
 ]);
 
 class GUIStageManager
