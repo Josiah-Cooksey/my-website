@@ -17,7 +17,7 @@ form.onsubmit = async (event) =>
         formData.delete("inputImage");
         formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");
     }
-    if (form.palette.files.length == 0 || document.getElementById("useInputImageUpload").checked)
+    if (form.palette.files.length == 0 || document.getElementById("usepaletteUpload").checked)
     {
         const paletteResponse = await fetch("media/sample-palettes/printer colors.png");
         const paletteBlob = await paletteResponse.blob();
