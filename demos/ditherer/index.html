@@ -169,7 +169,14 @@
                             <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onclick="
                                 document.getElementById('inputImage').click();
                             ">Upload Image</button>
-                            <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" hidden>
+                            <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" data-canvas-target="#inputImageCanvas" hidden>
+                            <div id="inputImageCanvas" class="m-2 p-2" data-default-hidden="true" hidden>
+                                <p class="text-md" data-default-hidden="true" hidden></p>
+                                <button class="align-right text-gray-500 hover:text-gray-700 font-bold text-xl" data-default-hidden="true" hidden>
+                                    &times; Remove Image
+                                </button>
+                                <canvas class="w-full" data-default-hidden="true" hidden></canvas>
+                            </div>
                         </div>
                         
                         <div id="paletteUpload" data-group-stage="palette" data-default-hidden="true" hidden>
@@ -177,12 +184,18 @@
                             <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onclick="
                                 document.getElementById('palette').click();
                             ">Upload Palette</button>
-                            <input accept=".png" type="file" id="palette" name="palette" class="m-2" hidden>
+                            <input accept=".png" type="file" id="palette" name="palette" class="m-2" data-canvas-target="#paletteCanvas" hidden>
+                            <div>
+                                <canvas id="paletteCanvas"></canvas>
+                            </div>
                         </div>
                         
-                        <div id="kernelUpload" data-group-stage="kernel" data-default-hidden="true" >
+                        <div id="kernelUpload" data-group-stage="kernel" data-default-hidden="true" hidden>
                             <label for="kernel" class="text-md" hidden>Dithering kernel:</label>
-                            <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" hidden>
+                            <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" data-canvas-target="#kernelCanvas" hidden>
+                            <div>
+                                <canvas id="kernelCanvas"></canvas>
+                            </div>
                         </div>
 
                     </form>
@@ -193,9 +206,10 @@
                 </div>
             </div>
         </section>
-        <script src="uploadParser.js?v=111820252252"></script>
-        <script src="carouselScroller.js?v=111820252242"></script>
-        <script src="radioHiders.js?v=111820252242"></script>
-        <script type="module" src="GUIStageManager.js?v=111820252242"></script>
+        <script src="uploadParser.js?v=202511191511"></script>
+        <script src="carouselScroller.js?v=202511191511"></script>
+        <script src="radioHiders.js?v=202511191511"></script>
+        <script src="imageUploadPreviewer.js?v=202511191511"></script>
+        <script type="module" src="GUIStageManager.js?v=202511191511"></script>
     </body>
 </html>
