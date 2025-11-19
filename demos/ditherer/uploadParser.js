@@ -19,13 +19,19 @@ form.onsubmit = async (event) =>
     }
     if (form.palette.files.length == 0 || document.getElementById("usepaletteUpload").checked)
     {
-        const paletteResponse = await fetch("media/sample-palettes/printer colors.png");
+        
+        const carousel = document.getElementById("paletteImageCarousel");
+        const slides = carousel.querySelectorAll("img");
+        const paletteURL = slides[parseInt(carousel.dataset.selectedImageIndex) + 2].src;
+
+        const paletteResponse = await fetch(paletteURL);
         const paletteBlob = await paletteResponse.blob();
         formData.delete("palette");
         formData.append("palette", paletteBlob, "placeholderfilename.placeholderfiletype");
     }
     if (form.kernel.files.length == 0)// || document.getElementById("useKernelCarousel").checked)
     {
+        // TODO: use uploaded kernel/pattern when the back-end supports it
         const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
         const kernelBlob = await kernelResponse.blob();
         formData.delete("kernel");
