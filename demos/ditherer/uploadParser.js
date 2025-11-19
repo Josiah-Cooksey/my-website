@@ -7,6 +7,7 @@ form.onsubmit = async (event) =>
 
     if (form.inputImage.files.length == 0 || document.getElementById("useInputImageCarousel").checked)
     {
+        console.log("POSTing carousel input image");
         const carousel = document.getElementById("inputImageCarousel");
         const slides = carousel.querySelectorAll("img");
         const inputImageURL = slides[parseInt(carousel.dataset.selectedImageIndex) + 2].src;
@@ -17,9 +18,13 @@ form.onsubmit = async (event) =>
         formData.delete("inputImage");
         formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");
     }
-    if (form.palette.files.length == 0 || document.getElementById("usepaletteUpload").checked)
+    else
     {
-        
+        console.log("POSTing uploaded input image");
+    }
+    if (form.palette.files.length == 0 || document.getElementById("usepaletteCarousel").checked)
+    {
+        console.log("POSTing carousel palette");
         const carousel = document.getElementById("paletteImageCarousel");
         const slides = carousel.querySelectorAll("img");
         const paletteURL = slides[parseInt(carousel.dataset.selectedImageIndex) + 2].src;
@@ -29,8 +34,13 @@ form.onsubmit = async (event) =>
         formData.delete("palette");
         formData.append("palette", paletteBlob, "placeholderfilename.placeholderfiletype");
     }
+    else
+    {
+        console.log("POSTing uploaded palette");
+    }
     if (form.kernel.files.length == 0)// || document.getElementById("useKernelCarousel").checked)
     {
+        console.log("POSTing default kernel");
         // TODO: use uploaded kernel/pattern when the back-end supports it
         const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
         const kernelBlob = await kernelResponse.blob();
