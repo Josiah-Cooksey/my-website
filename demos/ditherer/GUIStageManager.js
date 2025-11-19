@@ -90,7 +90,6 @@ class GUIStageManager
                     this.navButtons[1].hidden = true;
                 }
                 this.navButtons[2].hidden = true;
-                this.hideStageGroup(STAGENAMES[stepData.lastStep]);
                 // TODO: address this lazy fix that may cause issues later
                 this.stepHandler.step = 1;
                 this.stepHandler.lastStep = 2;
