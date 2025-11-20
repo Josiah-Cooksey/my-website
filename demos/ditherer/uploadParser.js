@@ -14,13 +14,20 @@ form.onsubmit = async (event) =>
 
         const inputImageResponse = await fetch(inputImageURL);
         const inputImageBlob = await inputImageResponse.blob();
-        // this line removes the existing form field with the same name first
+        // this line removes the existing form field with the same name first to avoid duplicate form fields with the same name but different data
         formData.delete("inputImage");
         formData.append("inputImage", inputImageBlob, "placeholderfilename.placeholderfiletype");
     }
     else
     {
-        console.log("POSTing uploaded input image");
+        const filename = form.querySelector("#inputImage").files[0].name;
+        console.log(`POSTing uploaded input image: ${filename}`);
+        formData.delete("inputImage");
+        const canvasHolder = form.querySelector("#inputImageCanvas");
+        const inputImageCanvas = canvasHolder.querySelector("canvas");
+        inputImageCanvas.toBlob((blob) => {
+            formData.append("inputImage", blob, `${filename}`);
+        }, "image/png");
     }
     if (form.palette.files.length == 0 || document.getElementById("usepaletteCarousel").checked)
     {
@@ -36,7 +43,14 @@ form.onsubmit = async (event) =>
     }
     else
     {
-        console.log("POSTing uploaded palette");
+        const filename = form.querySelector("#palette").files[0].name;
+        console.log(`POSTing uploaded palette: ${filename}`);
+        formData.delete("palette");
+        const canvasHolder = form.querySelector("#paletteCanvas");
+        const paletteCanvas = canvasHolder.querySelector("canvas");
+        paletteCanvas.toBlob((blob) => {
+            formData.append("palette", blob, `${filename}`);
+        }, "image/png");
     }
     if (form.kernel.files.length == 0)// || document.getElementById("useKernelCarousel").checked)
     {
