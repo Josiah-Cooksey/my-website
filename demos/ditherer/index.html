@@ -170,12 +170,12 @@
                                 document.getElementById('inputImage').click();
                             ">Upload Image</button>
                             <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" data-canvas-target="#inputImageCanvas" hidden>
-                            <div id="inputImageCanvas" class="m-2 p-2" data-default-hidden="true" hidden>
-                                <p class="text-md" data-default-hidden="true" hidden></p>
-                                <button class="align-right text-gray-500 hover:text-gray-700 font-bold text-xl" data-default-hidden="true" hidden>
+                            <div id="inputImageCanvas" class="m-2 p-2">
+                                <p class="text-md text-center">No file is selected.</p>
+                                <button class="mx-auto text-gray-500 hover:text-gray-700 font-bold text-xl" hidden>
                                     &times; Remove Image
                                 </button>
-                                <canvas class="w-full" data-default-hidden="true" hidden></canvas>
+                                <canvas class="w-full" hidden></canvas>
                             </div>
                         </div>
                         
@@ -185,16 +185,24 @@
                                 document.getElementById('palette').click();
                             ">Upload Palette</button>
                             <input accept=".png" type="file" id="palette" name="palette" class="m-2" data-canvas-target="#paletteCanvas" hidden>
-                            <div>
-                                <canvas id="paletteCanvas"></canvas>
+                            <div id="paletteCanvas" class="m-2 p-2" hidden>
+                                <p class="text-md" hidden></p>
+                                <button class="align-right text-gray-500 hover:text-gray-700 font-bold text-xl" hidden>
+                                    &times; Remove Image
+                                </button>
+                                <canvas class="w-full" hidden></canvas>
                             </div>
                         </div>
                         
                         <div id="kernelUpload" data-group-stage="kernel" data-default-hidden="true" hidden>
                             <label for="kernel" class="text-md" hidden>Dithering kernel:</label>
                             <input accept=".png" type="file" id="kernel" name="kernel" class="m-2" data-canvas-target="#kernelCanvas" hidden>
-                            <div>
-                                <canvas id="kernelCanvas"></canvas>
+                            <div id="kernelCanvas" class="m-2 p-2" hidden>
+                                <p class="text-md" hidden></p>
+                                <button class="align-right text-gray-500 hover:text-gray-700 font-bold text-xl" hidden>
+                                    &times; Remove Image
+                                </button>
+                                <canvas class="w-full" hidden></canvas>
                             </div>
                         </div>
 
