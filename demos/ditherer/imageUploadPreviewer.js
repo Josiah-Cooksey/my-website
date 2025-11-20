@@ -4,48 +4,87 @@ let maxImageUploadWidth = 1280;
 let maxImageUploadHeight = 720;
 let imageInputs = document.querySelectorAll("[data-canvas-target]");
 imageInputs.forEach(inputElement => {
-    inputElement.addEventListener("change", () => document.querySelectorAll(inputElement.dataset.canvasTarget).forEach(targetCanvas => {
-        try 
-        {   
-            // the only child button will just be to clear the user-selected file
-            /*canvasTarget.querySelectorAll("button")[0].addEventListener("click", () => {
-                document.getElementById('inputImage').value = '';
-            });
-            delete canvasTarget.dataset.defaultHidden;
-            canvasTarget.hidden = false;*/
 
+    let canvasHolder = document.querySelector(inputElement.dataset.canvasTarget);
+    let canvasElement = canvasHolder.querySelector("canvas");
+    let canvasLabel = canvasHolder.querySelector("p");
+    let removeImageButton = canvasHolder.querySelector("button");
+    // the only child button will clear the user-selected file and hide all but the selected filename holder
+    removeImageButton.addEventListener("click", () => {
+        inputElement.value = "";
+        removeImageButton.hidden = true;
+        canvasLabel.textContent = "No file is selected."
+        canvasElement.hidden = true;
+    });
+
+    inputElement.addEventListener("change", () => {
+        canvasElement.hidden = false;
+        try 
+        {
             let imageFile = inputElement.files[0];
             if (!imageFile)
             {
-                targetCanvas.width = 0;
-                targetCanvas.height = 0;
+                canvasElement.width = 0;
+                canvasElement.height = 0;
                 return;
             }
+            
+            canvasLabel.textContent = `Selected file: ${imageFile.name}`
+            removeImageButton.hidden = false;
+
             createImageBitmap(imageFile).then(bitmap => {
-                let ctx = targetCanvas.getContext("2d");
+                let ctx = canvasElement.getContext("2d");
                 ctx.imageSmoothingEnabled = false;
-                if (bitmap.width > maxImageUploadWidth)
+                let drawWidthScale = maxImageUploadWidth / bitmap.width;
+                let drawHeightScale = maxImageUploadHeight / bitmap.height;
+                let scaleFactor = 1;
+                
+                // I want to scale the image squarely so that there is no horizontal or vertical distortion
+                if (drawHeightScale < drawWidthScale)
                 {
-                    targetCanvas.width = maxImageUploadWidth;
+                    scaleFactor = drawHeightScale;
                 }
                 else
                 {
-                    targetCanvas.width = bitmap.width;
+                    scaleFactor = drawWidthScale;
+                }
+
+                if (bitmap.width > maxImageUploadWidth)
+                {
+                    canvasElement.width = maxImageUploadWidth;
+                }
+                else
+                {
+                    canvasElement.width = bitmap.width;
                 }
                 if (bitmap.height > maxImageUploadHeight)
                 {
-                    targetCanvas.height = maxImageUploadHeight;
+                    canvasElement.height = maxImageUploadHeight;
                 }
                 else
                 {
-                    targetCanvas.height = bitmap.height;
+                    canvasElement.height = bitmap.height;
                 }
-                ctx.drawImage(bitmap, 0, 0, targetCanvas.width, targetCanvas.height);
+
+                
+                
+                if (scaleFactor < 1)
+                {
+                    let renderWidth = bitmap.width * scaleFactor;
+                    let renderHeight = bitmap.height * scaleFactor;
+                    canvasElement.width = renderWidth;
+                    canvasElement.height = renderHeight;
+                    ctx.drawImage(bitmap, 0, 0, renderWidth, renderHeight);
+                }
+                else
+                {
+                    ctx.drawImage(bitmap, 0, 0, canvasElement.width, canvasElement.height);
+                }
             });
         } 
         catch (error) 
         {
             console.log(`error on ${inputElement} file upload; details: ${error}`)
         }
-    }));
+    });
 });
