@@ -80,6 +80,7 @@ form.onsubmit = async (event) =>
             return;
         }
         const imageElement = document.getElementById("resultImageHolder");
+        imageElement.src = "";
         imageElement.src = `data:image/png;base64,${jsonResult["resultImage"]}`;
         imageElement.hidden = false;
     }
