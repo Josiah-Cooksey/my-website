@@ -17,20 +17,30 @@ class Carousel
             this.carousel.parentElement.parentElement.hidden = false;
             requestAnimationFrame(() => {
                 this.slideWidth = this.slides[0].scrollWidth;
-                this.carousel.parentElement.parentElement.hidden = true;
+                // instant scroll to first position
+                document.documentElement.setAttribute("style", "scroll-behavior: auto;");
+                setTimeout(() => {
+                    this.carousel.scrollTo({ left: this.slideWidth * 2});
+                    document.documentElement.removeAttribute("style");
+                    this.carousel.parentElement.parentElement.hidden = true;
+                }, 0)
             });
         }
         else
         {
             this.slideWidth = this.slides[0].scrollWidth;
+            // instant scroll to first position
+            document.documentElement.setAttribute("style", "scroll-behavior: auto;");
+            setTimeout(() => {
+                this.carousel.scrollTo({ left: this.slideWidth * 2});
+                document.documentElement.removeAttribute("style");
+            }, 0)
         }
         
         // because the carousel always shows 3 slides, the carousel will hold all unique slides, in addition to the end 2 copied to the beginning and vice-versa
         // such as d e [a b c d e] a b
         // that way, we can simulate an infinite/looping carousel
         this.realSlideCount = this.slides.length - 4;
-
-        this.carousel.scrollTo({ left: this.slideWidth * 2, behavior: "auto" });
 
         let carouselButtons = this.carousel.querySelectorAll("[data-carousel-aspect='carousel-button']");
         carouselButtons[0].addEventListener("click", () => this.prevClick());
