@@ -52,15 +52,6 @@ form.onsubmit = async (event) =>
             formData.append("palette", blob, `${filename}`);
         }, "image/png");
     }
-    if (form.kernel.files.length == 0)// || document.getElementById("useKernelCarousel").checked)
-    {
-        console.log("POSTing default kernel");
-        // TODO: use uploaded kernel/pattern when the back-end supports it
-        const kernelResponse = await fetch("media/sample-diffusions/diffusion.png");
-        const kernelBlob = await kernelResponse.blob();
-        formData.delete("kernel");
-        formData.append("kernel", kernelBlob, "placeholderfilename.placeholderfiletype");
-    }
 
     try
     {
