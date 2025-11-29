@@ -3,14 +3,14 @@ import GUIStepHandler from "../../scripts/GUIStepHandler.js";
 const STAGES = Object.freeze({
     INPUTIMAGE: 0,
     PALETTE: 1,
-    KERNEL: 2,
+    PATTERN: 2,
     OUTPUTIMAGE: 3
 });
 
 const STAGENAMES = Object.freeze([
     "inputImage",
     "palette",
-    "kernel",
+    "pattern",
     "outputImage"
 ]);
 
@@ -62,7 +62,7 @@ class GUIStageManager
                 {
                     this.navButtons[0].hidden = false;
                 }
-                else if (stepData.lastStep == STAGES.KERNEL)
+                else if (stepData.lastStep == STAGES.PATTERN)
                 {
                     this.navButtons[1].hidden = false;
                     this.navButtons[2].hidden = true;
@@ -70,9 +70,9 @@ class GUIStageManager
                 this.hideStageGroup(STAGENAMES[stepData.lastStep]);
                 break;
 
-            case STAGES.KERNEL:
-                document.getElementById("stepInstruction").textContent = "Choose pattern source";
-                this.showStageGroup(STAGENAMES[STAGES.KERNEL]);
+            case STAGES.PATTERN:
+                document.getElementById("stepInstruction").textContent = "Choose pattern";
+                this.showStageGroup(STAGENAMES[STAGES.PATTERN]);
                 if (stepData.lastStep == STAGES.PALETTE)
                 {
                     this.navButtons[1].hidden = true;
@@ -85,7 +85,7 @@ class GUIStageManager
                 document.getElementById("stepDisplay").textContent = `Result:`;
                 document.getElementById("stepInstruction").textContent = "Press the back button to input another image for dithering.";
                 this.showStageGroup(STAGENAMES[STAGES.OUTPUTIMAGE]);
-                if (stepData.lastStep == STAGES.KERNEL)
+                if (stepData.lastStep == STAGES.PATTERN)
                 {
                     this.navButtons[1].hidden = true;
                 }
