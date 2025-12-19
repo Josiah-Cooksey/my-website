@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" id="html">
+    <head>
+        <title>Josiah Cooksey - Full Stack Software Developer</title>
+        <link rel="canonical" href="https://jcooksey.dev/">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portfolio website of Josiah Cooksey, showcasing software projects, experience, and possibly blog posts.">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+        </script>
+    </head>
+    <body class="p-2 bg-gray-400 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen max-w-screen">
+        <header>
+            <!--div class="absolute top-10 left-10 z-[9999] bg-yellow-500 p-4">
+                On top of everything!
+            </div-->
+            <b><h1>Page Under Construction</h1></b>
+            <h3 id="last-update-date">Loading last update timestamp...</h3>
+            <script>
+                // shows last update timestamp because I want visitors to know that the page is being developed and isn't stale
+                fetch("https://api.github.com/repos/Josiah-Cooksey/my-website")
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Last push:", data.pushed_at);
+                        let listedTime = new Date(data.pushed_at)
+                        
+                        document.getElementById("last-update-date").textContent = "Last updated: " + listedTime.toLocaleString()
+                    })
+                    .catch(error => {
+                        console.error("Error:", error)
+                        document.getElementById("last-update-date").textContent = "Could not obtain last update timestamp."
+                    });
+            </script>
+            <section>
+                <h4>My other projects: <a href="https://github.com/Josiah-Cooksey/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Github</a></h4>
+                <h4>My experience: <a href="https://www.linkedin.com/in/josiah-cooksey/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a></h4>
+            </section>
+            <button id="darkModeToggle" class="bg-blue-500 m-2 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-2 px-4 rounded-full">Toggle Dark Mode</button>
+        </header>
+        <!--div class="flex flex-col md:flex-row gap-4">
+            <div class="flex-1 bg-zinc-500 p-4 rounded">Home</div>
+            <div class="flex-1 bg-zinc-500 p-4 rounded">Projects</div>
+            <div class="flex-1 bg-zinc-500 p-4 rounded">Contact</div>
+        </div-->
+        <div class="flex flex-col md:flex-row">
+            <section class="px-1">
+                <div class="my-2 rounded-2xl shadow-xl bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                    <p class="text-xl text-center font-bold">About Me</p>
+                </div>
+                <div class="w-[320px] rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 mx-auto bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                    <img class="object-cover w-[128px] h-[128px] rounded-full bg-white m-3" src="./media/landing-page/dithered.png" alt="headshot of Josiah Cooksey with a dithered filter applied"><!--may want to add style="image-rendering: pixelated;" but I think that it looks fine with the default interpolation-->
+                    <div class="py-3 flex flex-col max-w-xl">
+                        <div class="m-1 flex items-center gap-2">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <p class="text-md font-semibold">Java</p>
+                        </div>
+                        <div class="m-1 flex items-center gap-2">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/python.svg" alt="Python programming language icon">
+                            <p class="text-md font-semibold">Python</p>
+                        </div>
+                        <div class="m-1 flex items-center gap-2">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/spring-boot.svg" alt="Spring Boot programming framework icon">
+                            <p class="text-md font-semibold">Spring Boot</p>
+                        </div>
+                        <div class="m-1 flex items-center gap-2">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                            <p class="text-md font-semibold">AWS</p>
+                        </div>
+                        <div class="m-1 flex items-center gap-2">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/mysql.svg" alt="MySQL dolphin logo">
+                            <p class="text-md font-semibold">MySQL</p>
+                        </div>
+                        <div class="m-1 flex items-center gap-2">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/hibernate.svg" alt="Hibernate icon">
+                            <p class="text-md font-semibold">Hibernate</p>
+                        </div>
+                    </div>
+                    <div class="p-2 m-2">
+                        <h3 class="text-xl font-bold">Josiah Cooksey</h3>
+                        <p class="text-gray-500 text-sm mb-2">Illinois, United States of America</p>
+                        <p class="text-gray-500 text-sm">Software developer who enjoys the algorithmic, puzzle-solving side of programming.</p>
+                        <br>
+                        <ul class="text-sm list-disc m-1">
+                            <li>B.Sc. in Computer Science (completed in 6 months)</li>
+                            <li>Full-stack development with Java, Spring Boot, & Angular</li>
+                            <li>Python automation experience</li>
+                            <li>Enjoys playing the piano</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="w-full px-1">
+                <div class="my-2 rounded-2xl shadow-xl bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                    <p class="text-xl text-center font-bold">Select Projects</p>
+                </div>
+                <div class="flex flex-wrap justify-center justify-evenly gap-y-3">
+                    <div class="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                        <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Live Demo</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto"></div>
+                        <a href="https://github.com/Josiah-Cooksey/multi-modal-ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Source Code</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto">
+                            <h3 class="text-xl">Multi-colour Ditherer</h3>
+                        </div>
+                        <div class="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                        </div>
+                        <div class="p-2 m-2 mx-auto">
+                            <p class="text-sm text-center">Renders images with only a few colours</p>
+                            <p class="text-sm text-center">Supports custom input images and palettes</p>
+                        </div>
+                        <div class="p-2 m-2 mx-auto flex">
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                            <p class="text-xl text-bold my-auto mx-1">➝</p>
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
+                        </div>
+                    </div>
+
+                    
+                    <div class="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                        <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Live Demo</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto"></div>
+                        <a href="https://github.com/Josiah-Cooksey/multi-modal-ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Source Code</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto">
+                            <h3 class="text-xl">Multi-colour Ditherer</h3>
+                        </div>
+                        <div class="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                        </div>
+                        <div class="p-2 m-2 mx-auto">
+                            <p class="text-sm text-center">Renders images with only a few colours</p>
+                            <p class="text-sm text-center">Supports custom input images and palettes</p>
+                        </div>
+                        <div class="p-2 m-2 mx-auto flex">
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                            <p class="text-xl text-bold my-auto mx-1">➝</p>
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
+                        </div>
+                    </div>
+
+                    
+                    <div class="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                        <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Live Demo</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto"></div>
+                        <a href="https://github.com/Josiah-Cooksey/multi-modal-ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Source Code</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto">
+                            <h3 class="text-xl">Multi-colour Ditherer</h3>
+                        </div>
+                        <div class="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                        </div>
+                        <div class="p-2 m-2 mx-auto">
+                            <p class="text-sm text-center">Renders images with only a few colours</p>
+                            <p class="text-sm text-center">Supports custom input images and palettes</p>
+                        </div>
+                        <div class="p-2 m-2 mx-auto flex">
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                            <p class="text-xl text-bold my-auto mx-1">➝</p>
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
+                        </div>
+                    </div>
+
+                    
+                    <div class="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                        <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Live Demo</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto"></div>
+                        <a href="https://github.com/Josiah-Cooksey/multi-modal-ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Source Code</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto">
+                            <h3 class="text-xl">Multi-colour Ditherer</h3>
+                        </div>
+                        <div class="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                        </div>
+                        <div class="p-2 m-2 mx-auto">
+                            <p class="text-sm text-center">Renders images with only a few colours</p>
+                            <p class="text-sm text-center">Supports custom input images and palettes</p>
+                        </div>
+                        <div class="p-2 m-2 mx-auto flex">
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                            <p class="text-xl text-bold my-auto mx-1">➝</p>
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
+                        </div>
+                    </div>
+
+                    
+                    <div class="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                        <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Live Demo</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto"></div>
+                        <a href="https://github.com/Josiah-Cooksey/multi-modal-ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Source Code</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto">
+                            <h3 class="text-xl">Multi-colour Ditherer</h3>
+                        </div>
+                        <div class="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                        </div>
+                        <div class="p-2 m-2 mx-auto">
+                            <p class="text-sm text-center">Renders images with only a few colours</p>
+                            <p class="text-sm text-center">Supports custom input images and palettes</p>
+                        </div>
+                        <div class="p-2 m-2 mx-auto flex">
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                            <p class="text-xl text-bold my-auto mx-1">➝</p>
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
+                        </div>
+                    </div>
+
+                    
+                    <div class="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                        <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Live Demo</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto"></div>
+                        <a href="https://github.com/Josiah-Cooksey/multi-modal-ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Source Code</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto">
+                            <h3 class="text-xl">Multi-colour Ditherer</h3>
+                        </div>
+                        <div class="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                        </div>
+                        <div class="p-2 m-2 mx-auto">
+                            <p class="text-sm text-center">Renders images with only a few colours</p>
+                            <p class="text-sm text-center">Supports custom input images and palettes</p>
+                        </div>
+                        <div class="p-2 m-2 mx-auto flex">
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                            <p class="text-xl text-bold my-auto mx-1">➝</p>
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
+                        </div>
+                    </div>
+
+                    
+                    <div class="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                        <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Live Demo</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto"></div>
+                        <a href="https://github.com/Josiah-Cooksey/multi-modal-ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Source Code</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto">
+                            <h3 class="text-xl">Multi-colour Ditherer</h3>
+                        </div>
+                        <div class="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                        </div>
+                        <div class="p-2 m-2 mx-auto">
+                            <p class="text-sm text-center">Renders images with only a few colours</p>
+                            <p class="text-sm text-center">Supports custom input images and palettes</p>
+                        </div>
+                        <div class="p-2 m-2 mx-auto flex">
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                            <p class="text-xl text-bold my-auto mx-1">➝</p>
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
+                        </div>
+                    </div>
+
+                    
+                    <div class="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                        <a href="./demos/ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Live Demo</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto"></div>
+                        <a href="https://github.com/Josiah-Cooksey/multi-modal-ditherer" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            <div class="flex items-center mx-3 my-2">
+                                <h2 class="text-sm">Source Code</h2>
+                                <div class="mx-1"></div>
+                                <img class="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon">
+                            </div>
+                        </a>
+                        <div class="mx-auto">
+                            <h3 class="text-xl">Multi-colour Ditherer</h3>
+                        </div>
+                        <div class="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon">
+                            <img class="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo">
+                        </div>
+                        <div class="p-2 m-2 mx-auto">
+                            <p class="text-sm text-center">Renders images with only a few colours</p>
+                            <p class="text-sm text-center">Supports custom input images and palettes</p>
+                        </div>
+                        <div class="p-2 m-2 mx-auto flex">
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple">
+                            <p class="text-xl text-bold my-auto mx-1">➝</p>
+                            <img class="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it">
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </section>
+        </div>
+        
+        <script src="../../scripts/darkModeToggler.js?v=202512011746"></script>
+    </body>
+</html>
