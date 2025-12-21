@@ -1,3 +1,6 @@
 .vscode/
 demos/ditherer/media/sample-images/tall.png
 demos/ditherer/media/sample-images/wide.png
+node_modules/
+out/
+.next/
