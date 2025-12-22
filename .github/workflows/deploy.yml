@@ -29,5 +29,5 @@ jobs:
 
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: out # because we're not compiling anything at this time, we'll just publish the whole directory
-          publish_branch: build # I think that when I start using React for SSG, I'll want the live, compiled files that are being served to be in the build branch
+          publish_dir: out # the directory that npm run build -> next build outputs to by default
+          publish_branch: build # compiled/built files will be served from the build branch
