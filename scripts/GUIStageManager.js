@@ -1,4 +1,4 @@
-import GUIStepHandler from "../../scripts/GUIStepHandler.js";
+import GUIStepHandler from "./GUIStepHandler.js";
 
 const STAGES = Object.freeze({
     INPUTIMAGE: 0,
