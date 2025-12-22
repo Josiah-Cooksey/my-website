@@ -1,11 +1,11 @@
 "use client";
 
-import Layout from "./layout.jsx";
+import PrimaryTemplate from "../components/PrimaryTemplate.jsx";
 
-export default function RootPage({ children })
+export default function RootPage()
 {
     return (
-        <Layout
+        <PrimaryTemplate
             headerPostAddition={
                 <>
                     <p><b>Page Under Construction</b></p>
@@ -112,6 +112,6 @@ export default function RootPage({ children })
                     </div>
                 </section>
             </div>
-        </Layout>
+        </PrimaryTemplate>
     );
 }

@@ -1,4 +1,4 @@
-export default function Layout({ children, headerPostAddition })
+export default function PrimaryTemplate({ children, headerPostAddition })
 {
     return (
         <html lang="en" className="dark" id="html">
