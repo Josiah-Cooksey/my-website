@@ -7,9 +7,8 @@ export default function DithererDemoPage()
     return (
         <PrimaryTemplate>
             <head>
-                <title>Josiah Cooksey - Full Stack Software Developer</title>
-                <link rel="canonical" href="https://jcooksey.dev/" />
-                <meta name="description" content="Portfolio website of Josiah Cooksey, showcasing software projects, experience, and possibly blog posts." />
+                <title>Josiah Cooksey - Ditherer Demo</title>
+                <meta name="description" content="Interactive image-processing pipeline supporting user-uploaded images and palettes." />
             </head>
             <section>
                 <div class="m-4 w-full min-w-[320px] max-w-[600px] mx-auto rounded-2xl shadow-xl flex flex-wrap flex-shrink-0 bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
@@ -197,6 +196,7 @@ export default function DithererDemoPage()
             
             <script src="./scripts/uploadParser.js?v=202511282111"></script>
             <script src="./scripts/imageUploadPreviewer.js?v=202511282111"></script>
+            
             <script src="/scripts/carouselScroller.js?v=202511282111"></script>
             <script src="/scripts/radioHiders.js?v=202511282111"></script>
             <script type="module" src="/scripts/GUIStageManager.js?v=202511282111"></script>
