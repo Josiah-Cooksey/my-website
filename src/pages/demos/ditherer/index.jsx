@@ -195,11 +195,11 @@ export default function DithererDemoPage()
                 </div>
             </section>
             
-            <script src="uploadParser.js?v=202511282111"></script>
-            <script src="carouselScroller.js?v=202511282111"></script>
-            <script src="radioHiders.js?v=202511282111"></script>
-            <script src="imageUploadPreviewer.js?v=202511282111"></script>
-            <script type="module" src="GUIStageManager.js?v=202511282111"></script>
+            <script src="./scripts/uploadParser.js?v=202511282111"></script>
+            <script src="./scripts/imageUploadPreviewer.js?v=202511282111"></script>
+            <script src="/scripts/carouselScroller.js?v=202511282111"></script>
+            <script src="/scripts/radioHiders.js?v=202511282111"></script>
+            <script type="module" src="/scripts/GUIStageManager.js?v=202511282111"></script>
         </PrimaryTemplate>
     );
 }
