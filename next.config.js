@@ -1,5 +1,6 @@
 const nextConfig = {
-    output: "export"
+    output: "export",
+    trailingSlash: true
 };
 
 module.exports = nextConfig;
