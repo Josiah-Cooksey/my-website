@@ -24,7 +24,7 @@ export default function DithererDemoPage()
                         <div class="w-full">
                             <div class="w-max mx-auto" data-group-stage="inputImage">
                                 <div>
-                                    <input type="radio" id="useInputImageCarousel" name="inputImageSource" value="carousel" data-radio-hider="true" data-radio-enable-target="#inputImageCarouselHolder" data-radio-disable-target="#inputImageUpload" checked />
+                                    <input type="radio" id="useInputImageCarousel" name="inputImageSource" value="carousel" data-radio-hider="true" data-radio-enable-target="#inputImageCarouselHolder" data-radio-disable-target="#inputImageUpload" defaultChecked />
                                     <label for="useInputImageCarousel" class="text-md">Carousel — use arrows to pick an image</label>
                                 </div>
                                 
@@ -37,7 +37,7 @@ export default function DithererDemoPage()
                             
                             <div class="w-max mx-auto" data-group-stage="palette" hidden>
                                 <div>
-                                    <input type="radio" id="usepaletteCarousel" name="paletteSource" value="carousel" data-radio-hider="true" data-radio-enable-target="#paletteImageCarouselHolder" data-radio-disable-target="#paletteUpload" checked />
+                                    <input type="radio" id="usepaletteCarousel" name="paletteSource" value="carousel" data-radio-hider="true" data-radio-enable-target="#paletteImageCarouselHolder" data-radio-disable-target="#paletteUpload" defaultChecked />
                                     <label for="usepaletteCarousel" class="text-md">Carousel — use arrows to pick a palette</label>
                                 </div>
                                 
@@ -50,7 +50,7 @@ export default function DithererDemoPage()
                             
                             <div class="w-max mx-auto" data-group-stage="pattern" hidden>
                                 <div>
-                                    <input form="ditherUploadForm" type="radio" id="useHilbertPattern" name="pattern" value="hilbert" data-radio-hider="true" data-radio-enable-target="#hilbertPatternVisualisation" data-radio-disable-target="#linearPatternVisualisation" checked />
+                                    <input form="ditherUploadForm" type="radio" id="useHilbertPattern" name="pattern" value="hilbert" data-radio-hider="true" data-radio-enable-target="#hilbertPatternVisualisation" data-radio-disable-target="#linearPatternVisualisation" defaultChecked />
                                     <label for="useHilbertPattern" class="text-md">Hilbert — zig-zagging fractal</label>
                                 </div>
                                 
