@@ -153,9 +153,7 @@ export default function DithererDemoPage()
                         <form id="ditherUploadForm" method="POST" enctype="multipart/form-data" autocomplete="off">
                             <div id="inputImageUpload" data-group-stage="inputImage" data-default-hidden="true" hidden>
                                 <label for="inputImage" class="sr-only">Input image:</label>
-                                <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onclick="
-                                    document.getElementById('inputImage').click();
-                                ">Upload Image</button>
+                                <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onClick={() => document.getElementById('inputImage').click()}>Upload Image</button>
                                 <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" data-canvas-target="#inputImageCanvas" hidden />
                                 <div id="inputImageCanvas" class="m-2 p-2">
                                     <p class="text-md text-center">No file is selected.</p>
@@ -170,9 +168,7 @@ export default function DithererDemoPage()
                             
                             <div id="paletteUpload" data-group-stage="palette" data-default-hidden="true" hidden>
                                 <label for="palette" class="text-md" hidden>Palette:</label>
-                                <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onclick="
-                                    document.getElementById('palette').click();
-                                ">Upload Palette</button>
+                                <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onClick={() => document.getElementById('palette').click()}>Upload Palette</button>
                                 <input accept=".png" type="file" id="palette" name="palette" class="m-2" data-canvas-target="#paletteCanvas" hidden />
                                 <div id="paletteCanvas" class="m-2 p-2">
                                     <p class="text-md text-center">No file is selected.</p>
