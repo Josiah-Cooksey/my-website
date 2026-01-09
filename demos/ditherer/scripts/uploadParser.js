@@ -67,7 +67,7 @@ form.onsubmit = async (event) =>
         {
             const errorTextField = document.getElementById("errorTextField");
             errorTextField.textContent = `An error occurred whilst processing your input. Details:\n${jsonResult["error"]}`;
-            errorTextField.hidden = false;
+            document.getElementById("errorField").hidden = false;
             return;
         }
         const imageElement = document.getElementById("resultImageHolder");
@@ -80,7 +80,7 @@ form.onsubmit = async (event) =>
         console.error(error);
         const errorTextField = document.getElementById("errorTextField");
         errorTextField.textContent = `A problem occured during parsing. Please refresh the page before trying again. Details:\n${error}`;
-        errorTextField.hidden = false;
+        document.getElementById("errorField").hidden = false;
         return;
     }
 }
