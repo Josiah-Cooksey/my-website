@@ -25,9 +25,12 @@ form.onsubmit = async (event) =>
         formData.delete("inputImage");
         const canvasHolder = form.querySelector("#inputImageCanvas");
         const inputImageCanvas = canvasHolder.querySelector("canvas");
-        inputImageCanvas.toBlob((blob) => {
-            formData.append("inputImage", blob, `${filename}`);
-        }, "image/png");
+        await new Promise((resolve) => {
+            inputImageCanvas.toBlob((blob) => {
+                formData.append("inputImage", blob, `${filename}`);
+                resolve(true);
+            }, "image/png");
+        });
     }
     if (form.palette.files.length == 0 || document.getElementById("usepaletteCarousel").checked)
     {
@@ -48,9 +51,13 @@ form.onsubmit = async (event) =>
         formData.delete("palette");
         const canvasHolder = form.querySelector("#paletteCanvas");
         const paletteCanvas = canvasHolder.querySelector("canvas");
-        paletteCanvas.toBlob((blob) => {
-            formData.append("palette", blob, `${filename}`);
-        }, "image/png");
+        
+        await new Promise((resolve) => {
+            paletteCanvas.toBlob((blob) => {
+                formData.append("palette", blob, `${filename}`);
+                resolve(true);
+            }, "image/png");
+        });
     }
 
     try
