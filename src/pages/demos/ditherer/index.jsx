@@ -185,7 +185,7 @@ export default function DithererDemoPage()
                     </div>
                     
                     <div class="m-2 mx-auto w-full" data-group-stage="outputImage" hidden>
-                        <img id="resultImageHolder" alt="dithered result image after processing is complete" hidden />
+                        <img id="resultImageHolder" src="../../media/throbber.gif" alt="dithered result image after processing is complete" hidden />
                     </div>
                 </div>
             </section>

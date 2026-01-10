@@ -5,6 +5,10 @@ form.onsubmit = async (event) =>
 
     const formData = new FormData(form);
 
+    const imageElement = document.getElementById("resultImageHolder");
+    imageElement.src = "../../media/throbber.gif";
+    imageElement.hidden = false;
+
     if (form.inputImage.files.length == 0 || document.getElementById("useInputImageCarousel").checked)
     {
         console.log("POSTing carousel input image");
