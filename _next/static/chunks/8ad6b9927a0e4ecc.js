@@ -1,5 +1,5 @@
 __turbopack_load_page_chunks__("/demos/ditherer", [
-  "static/chunks/bafe42b782085d3f.js",
+  "static/chunks/a92fb692a0136fad.js",
   "static/chunks/22067b37b9dc791e.js",
-  "static/chunks/turbopack-680970b7d10442c9.js"
+  "static/chunks/turbopack-2250ef61eb54b164.js"
 ])
