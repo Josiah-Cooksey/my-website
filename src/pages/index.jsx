@@ -52,8 +52,8 @@ export default function RootPage()
                                 <p className="text-md font-semibold">MySQL</p>
                             </div>
                             <div className="m-1 flex items-center gap-2">
-                                <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/hibernate.svg" alt="Hibernate icon" />
-                                <p className="text-md font-semibold">Hibernate</p>
+                                <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/javascript.svg" alt="JavaScript programming language icon" />
+                                <p className="text-md font-semibold">JavaScript</p>
                             </div>
                         </div>
                         <div className="p-2 m-2">
@@ -97,6 +97,7 @@ export default function RootPage()
                             </div>
                             <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
                                 <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon" />
+                                <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/javascript.svg" alt="JavaScript programming language icon" />
                                 <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo" />
                             </div>
                             <div className="p-2 m-2 mx-auto">
@@ -107,6 +108,39 @@ export default function RootPage()
                                 <img className="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple" />
                                 <p className="text-xl text-bold my-auto mx-1">➝</p>
                                 <img className="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it" />
+                            </div>
+                        </div>
+
+
+
+                        
+                        <div className="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                            <div className="flex items-center mx-3 my-2">
+                                <s>
+                                    <h2 className="text-sm">Live Demo</h2>
+                                </s>
+                                <div className="mx-1"></div>
+                                <img className="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon" />
+                            </div>
+                            <div className="mx-auto"></div>
+                            <a href="https://github.com/Josiah-Cooksey/assembly-recorder" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+                                <div className="flex items-center mx-3 my-2">
+                                    <h2 className="text-sm">Source Code</h2>
+                                    <div className="mx-1"></div>
+                                    <img className="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon" />
+                                </div>
+                            </a>
+                            <div className="mx-auto">
+                                <h3 className="text-xl">Assembly Step Recorder</h3>
+                            </div>
+                            <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                                <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/python.svg" alt="Python programming language icon" />
+                            </div>
+                            <div className="p-2 m-2 mx-auto">
+                                <p className="text-sm text-center">Enables users to easily record step-by-step notes and processes with a webcam</p>
+                            </div>
+                            <div className="p-2 m-2 mx-auto flex">
+                                <img className="w-[296px] h-[123px]" src="./media/landing-page/assembly-recorder-mockup.png" alt="Mockup of the GUI of the assembly step recorder" />
                             </div>
                         </div>
                     </div>
