@@ -156,7 +156,7 @@ export default function DithererDemoPage()
                                 <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onClick={() => document.getElementById('inputImage').click()}>Upload Image</button>
                                 <input accept=".png" type="file" id="inputImage" name="inputImage" class="m-2" data-canvas-target="#inputImageCanvas" hidden />
                                 <div id="inputImageCanvas" class="m-2 p-2">
-                                    <p class="text-md text-center">No file is selected.</p>
+                                    <p class="text-md text-center">No file is selected. Click the upload button or paste an image from your clipboard.</p>
                                     <div class="flex justify-center">
                                         <button type="button" class="mx-auto text-gray-500 hover:text-gray-700 font-bold text-xl" hidden>
                                         &times; Remove Image
@@ -171,7 +171,7 @@ export default function DithererDemoPage()
                                 <button type="button" class="block mx-auto bg-lime-700 hover:bg-lime-800 active:bg-lime-900 text-white font-bold py-2 px-4 rounded-full" onClick={() => document.getElementById('palette').click()}>Upload Palette</button>
                                 <input accept=".png" type="file" id="palette" name="palette" class="m-2" data-canvas-target="#paletteCanvas" hidden />
                                 <div id="paletteCanvas" class="m-2 p-2">
-                                    <p class="text-md text-center">No file is selected.</p>
+                                    <p class="text-md text-center">No file is selected. Click the upload button or paste an image from your clipboard.</p>
                                     <div class="flex justify-center">
                                         <button type="button" class="mx-auto text-gray-500 hover:text-gray-700 font-bold text-xl" hidden>
                                         &times; Remove Image
