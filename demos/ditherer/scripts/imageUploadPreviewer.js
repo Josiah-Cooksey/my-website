@@ -60,11 +60,20 @@ document.addEventListener("paste", (pasteEvent) => {
         return;
     }
     
+    console.log("paste contains image");
+
     imageInputs.forEach(inputElement => {
+        console.log(`checking input ${inputElement.innerHTML}`);
         let canvasHolder = document.querySelector(inputElement.dataset.canvasTarget);
-        if (!inputElement.parentElement.hidden)
+        // we check the *parent* because this ensures that each stage stays separate; e.g., the palette input doesn't receive a paste intended for the image input
+        if (!document.querySelectorAll(`[data-group-stage='${inputElement.id}']`)[0].hidden)
         {
-            console.log(`inputElement.parentElement.hidden: ${inputElement.parentElement.hidden}`);
+            console.log("found relevant stage");
+            // it's simplest to click the radio to show the upload/paste section and canvas instead of merging script files
+            let uploadOrPasteRadio = document.querySelectorAll(`[data-radio-enable-target='#${inputElement.id}Upload']`)[0];
+            uploadOrPasteRadio.dispatchEvent(new Event("click"));
+            uploadOrPasteRadio.checked = true;
+
             let canvasElement = canvasHolder.querySelector("canvas");
             let canvasLabel = canvasHolder.querySelector("p");
             let removeImageButton = canvasHolder.querySelector("button");
@@ -90,7 +99,7 @@ function scaleAndPreviewImage(imageFile, canvasElement)
         let drawHeightScale = maxImageUploadHeight / bitmap.height;
         let scaleFactor = 1;
         
-        // I want to scale the image squarely so that there is no horizontal or vertical distortion
+        // I want to scale the image squarely to avoid horizontal or vertical distortion
         if (drawHeightScale < drawWidthScale)
         {
             scaleFactor = drawHeightScale;
