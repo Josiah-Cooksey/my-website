@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next dev",
+    "dev": "rimraf out && next build && cd out && python3 -m http.server",
     "build": "next build",
     "start": "next start"
   },
@@ -23,5 +23,8 @@
     "next": "^16.1.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "rimraf": "^6.1.3"
   }
 }
