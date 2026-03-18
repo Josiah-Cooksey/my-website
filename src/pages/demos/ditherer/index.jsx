@@ -190,7 +190,7 @@ export default function DithererDemoPage()
                 </div>
             </section>
             
-            <script src="./scripts/uploadParser.js?v=202511282111"></script>
+            <script src="./scripts/uploadParser.js?v=202603171929"></script>
             <script src="./scripts/imageUploadPreviewer.js?v=202511282111"></script>
             
             <script src="/scripts/carouselScroller.js?v=202511282111"></script>
