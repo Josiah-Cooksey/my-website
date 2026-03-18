@@ -99,6 +99,7 @@ function scaleAndPreviewImage(imageFile, canvasElement)
         let drawHeightScale = maxImageUploadHeight / bitmap.height;
         let scaleFactor = 1;
         
+        // TODO: fix blurriness; right now if the canvas is 32 pixels in .width, the .clientWidth is 568
         // I want to scale the image squarely to avoid horizontal or vertical distortion
         if (drawHeightScale < drawWidthScale)
         {
