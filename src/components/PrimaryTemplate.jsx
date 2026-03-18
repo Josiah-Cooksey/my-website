@@ -25,6 +25,7 @@ export default function PrimaryTemplate({ children, headerPostAddition })
                     { headerPostAddition }
                 </header>
                 <main>{ children }</main>
+                {/* TODO: implement automatic cache-busting for script versions (use current date/timestamp at build time) */}
                 <script src="/scripts/darkModeToggler.js?v=202512202151"></script>
             </body>
         </html>
