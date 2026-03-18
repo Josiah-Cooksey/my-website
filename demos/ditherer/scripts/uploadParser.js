@@ -9,7 +9,7 @@ form.onsubmit = async (event) =>
     imageElement.src = "../../media/throbber.gif";
     imageElement.hidden = false;
 
-    if (form.inputImage.files.length == 0 || document.getElementById("useInputImageCarousel").checked)
+    if (document.getElementById("useInputImageCarousel").checked)
     {
         console.log("POSTing carousel input image");
         const carousel = document.getElementById("inputImageCarousel");
@@ -24,7 +24,12 @@ form.onsubmit = async (event) =>
     }
     else
     {
-        const filename = form.querySelector("#inputImage").files[0].name;
+        let filename = "default-image-name.png"
+        if (form.inputImage.files.length !== 0)
+        {
+            filename = form.querySelector("#inputImage").files[0].name;
+        }
+
         console.log(`POSTing uploaded input image: ${filename}`);
         formData.delete("inputImage");
         const canvasHolder = form.querySelector("#inputImageCanvas");
@@ -36,7 +41,7 @@ form.onsubmit = async (event) =>
             }, "image/png");
         });
     }
-    if (form.palette.files.length == 0 || document.getElementById("usepaletteCarousel").checked)
+    if (document.getElementById("usepaletteCarousel").checked)
     {
         console.log("POSTing carousel palette");
         const carousel = document.getElementById("paletteImageCarousel");
@@ -50,7 +55,11 @@ form.onsubmit = async (event) =>
     }
     else
     {
-        const filename = form.querySelector("#palette").files[0].name;
+        let filename = "default-palette-name.png"
+        if (form.inputImage.files.length !== 0)
+        {
+            filename = form.querySelector("#inputImage").files[0].name;
+        }
         console.log(`POSTing uploaded palette: ${filename}`);
         formData.delete("palette");
         const canvasHolder = form.querySelector("#paletteCanvas");
