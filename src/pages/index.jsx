@@ -107,7 +107,7 @@ export default function RootPage()
                             <div className="p-2 m-2 mx-auto flex">
                                 <img className="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple" />
                                 <p className="text-xl text-bold my-auto mx-1">➝</p>
-                                <img className="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it" />
+                                <img className="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple hilbert dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it" />
                             </div>
                         </div>
 
