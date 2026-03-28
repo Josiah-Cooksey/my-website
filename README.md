@@ -24,7 +24,7 @@ Some pages include interactivity using vanilla JavaScript.
 Includes a live demo connected to:
 
 - AWS Lambda
-- Amazon API Gateway
+- AWS API Gateway
 - Custom domain for API endpoints (instead of default AWS URLs)
 
 ## Deployment
