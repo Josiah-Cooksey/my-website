@@ -143,6 +143,43 @@ export default function RootPage()
                                 <img className="w-[296px] h-[123px]" src="./media/landing-page/assembly-recorder-mockup.png" alt="Mockup of the GUI of the assembly step recorder" />
                             </div>
                         </div>
+
+
+
+                        
+                        <div className="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                            <div className="flex items-center mx-3 my-2">
+                                <h2 className="text-sm">Coming Soon</h2>
+                                <div className="mx-1"></div>
+                                <div className="object-cover object-top bg-slate-300 rounded-md w-5 h-5"></div>
+                            </div>
+                            <div className="mx-auto"></div>
+                            <div className="flex items-center mx-3 my-2">
+                                <h2 className="text-sm">Coming Soon</h2>
+                                <div className="mx-1"></div>
+                                <div className="object-cover object-top bg-slate-300 rounded-md w-5 h-5"></div>
+                            </div>
+                            <div className="mx-auto">
+                                <h3 className="text-xl">Coming Soon</h3>
+                            </div>
+                            <div className="w-full flex">
+                                <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                                    <div className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1"></div>
+                                    <div className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1"></div>
+                                    <div className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1"></div>
+                                    <div className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1"></div>
+                                </div>
+                            </div>
+                            <div className="p-2 m-2 w-full mx-auto">
+                                <div className="bg-slate-300 w-[100%] h-3 rounded my-1"></div>
+                                <div className="bg-slate-300 w-[80%] h-3 rounded my-1"></div>
+                                <div className="bg-slate-300 w-[95%] h-3 rounded my-1"></div>
+                                <div className="bg-slate-300 w-[55%] h-3 rounded my-1"></div>
+                            </div>
+                            <div className="p-2 m-2 mx-auto flex">
+                                <div className="w-[296px] h-[123px] bg-slate-300 rounded-md"></div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
