@@ -95,7 +95,7 @@ export default function RootPage()
                             <div className="mx-auto">
                                 <h3 className="text-xl">Multi-colour Ditherer</h3>
                             </div>
-                            <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md h-min">
                                 <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/java.svg" alt="Java programming language icon" />
                                 <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/javascript.svg" alt="JavaScript programming language icon" />
                                 <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8" src="./media/coding-icons/aws.svg" alt="Amazon Web Services logo" />
@@ -108,6 +108,41 @@ export default function RootPage()
                                 <img className="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple.png" alt="A low resolution image of a red, ripe apple" />
                                 <p className="text-xl text-bold my-auto mx-1">➝</p>
                                 <img className="w-[134px] h-[123px]" src="./demos/ditherer/media/example-results/blurry apple hilbert dithered.png" alt="A low resolution image of a red, ripe apple that has had dithering applied to it" />
+                            </div>
+                        </div>
+
+
+
+                        
+                        <div className="mx-auto rounded-2xl shadow-xl w-[320px] flex flex-wrap bg-slate-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+                            <a>
+                                <div className="flex items-center mx-3 my-2">
+                                    <s>
+                                        <h2 className="text-sm">Live Demo</h2>
+                                    </s>
+                                    <div className="mx-1"></div>
+                                    <img className="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="Launch icon" />
+                                </div>
+                            </a>
+                            <div className="mx-auto"></div>
+                            <div className="flex items-center mx-3 my-2">
+                                <s>
+                                    <h2 className="text-sm">Source Code</h2>
+                                </s>
+                                <div className="mx-1"></div>
+                                <img className="object-cover object-top bg-slate-300 rounded-md w-5 h-5" src="./media/coding-icons/launch.svg" alt="External link icon" />
+                            </div>
+                            <div className="mx-auto">
+                                <h3 className="text-xl">E-Bike Service Reporter</h3>
+                            </div>
+                            <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md h-min">
+                                <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/python.svg" alt="Python programming language icon" />
+                            </div>
+                            <div className="p-2 m-2 mb-0 mx-auto">
+                                <p className="text-sm text-center">Parses API data to smartly determine which e-bikes need service based on when they were last used</p>
+                            </div>
+                            <div className="p-2 pt-0 mt-0 m-2 mx-auto flex">
+                                <img className="w-full h-auto" src="./media/landing-page/e-bike.jpg" alt="A black e-bike parked on tiles outdoors in the sunlight. Trees can be seen in the background." />
                             </div>
                         </div>
 
@@ -133,7 +168,7 @@ export default function RootPage()
                             <div className="mx-auto">
                                 <h3 className="text-xl">Assembly Step Recorder</h3>
                             </div>
-                            <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                            <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md h-min">
                                 <img className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1" src="./media/coding-icons/python.svg" alt="Python programming language icon" />
                             </div>
                             <div className="p-2 m-2 mx-auto">
@@ -163,7 +198,7 @@ export default function RootPage()
                                 <h3 className="text-xl">Coming Soon</h3>
                             </div>
                             <div className="w-full flex">
-                                <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md">
+                                <div className="p-2 mx-auto inline-grid grid-cols-5 gap-2 max-w-xl bg-gray-400 dark:bg-gray-900 rounded-md h-min">
                                     <div className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1"></div>
                                     <div className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1"></div>
                                     <div className="object-cover object-top bg-slate-300 rounded-md w-8 h-8 px-1"></div>
